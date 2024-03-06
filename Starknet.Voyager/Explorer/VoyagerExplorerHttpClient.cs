@@ -165,5 +165,28 @@ namespace Starknet.Voyager.Explorer
 
             return JsonConvert.DeserializeObject<ContractsListDetails>(content, jsonSerializerSettings);
         }
+
+        #region Events
+
+        /// <summary>
+        /// List events
+        /// </summary>
+        /// <param name="parameters">Query string parameters</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Get all events</returns>
+        public async Task<EventsListDetails> GetEventsAsync(GetEventsParameters parameters, CancellationToken cancellationToken)
+        {
+            var response = await httpClient.GetAsync($"events?ps={parameters.PageSize}" +
+                $"&p={parameters.Page}" +
+                $"&contract={parameters.Contract}" +
+                $"&txnHash={parameters.TxnHash}" +
+                $"&blockHash={parameters.BlockHash}", cancellationToken);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<EventsListDetails>(content, jsonSerializerSettings);
+        }
+
+        #endregion
     }
 }

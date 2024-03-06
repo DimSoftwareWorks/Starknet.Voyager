@@ -12,7 +12,7 @@
         
         public int TimeToCreate { get; set; }
         
-        public string L1AcceptTime { get; set; }
+        public object L1AcceptTime { get; set; }
         
         public string GasPrice { get; set; }
         

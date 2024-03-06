@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Starknet.Voyager.Explorer.Models;
 using System.Collections.Generic;
@@ -15,7 +16,11 @@ namespace Starknet.Voyager.Explorer
         {
             ContractResolver = new DefaultContractResolver
             {
-                NamingStrategy = new CamelCaseNamingStrategy()
+                NamingStrategy = new CamelCaseNamingStrategy(),
+            },
+            Converters = new List<JsonConverter>
+            {
+                new StringEnumConverter()
             }
         };
 

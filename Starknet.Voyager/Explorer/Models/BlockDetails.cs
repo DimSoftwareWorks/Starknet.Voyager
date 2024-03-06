@@ -1,4 +1,6 @@
-﻿namespace Starknet.Voyager.Explorer.Models
+﻿using Starknet.Voyager.Explorer.Enumerations;
+
+namespace Starknet.Voyager.Explorer.Models
 {
     public class BlockDetails
     {
@@ -16,8 +18,8 @@
 
         public int EventCount { get; set; }
 
-        public string L1VerificationTxnHash { get; set; }
+        public object L1VerificationTxnHash { get; set; }
 
-        public string Status { get; set; }
+        public BlockDetailsStatus Status { get; set; }
     }
 }

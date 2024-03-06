@@ -1,6 +1,6 @@
 ﻿using Starknet.Voyager.Explorer.Enumerations;
 
-namespace Starknet.Voyager.Explorer.Models
+namespace Starknet.Voyager.Explorer.Parameters
 {
     public class GetTransactionsParameters
     {

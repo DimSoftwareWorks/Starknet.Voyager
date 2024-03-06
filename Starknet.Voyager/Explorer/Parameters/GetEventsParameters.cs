@@ -1,4 +1,4 @@
-﻿namespace Starknet.Voyager.Explorer.Models
+﻿namespace Starknet.Voyager.Explorer.Parameters
 {
     public class GetEventsParameters
     {

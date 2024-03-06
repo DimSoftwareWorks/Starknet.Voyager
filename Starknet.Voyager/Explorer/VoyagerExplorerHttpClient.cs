@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Starknet.Voyager.Explorer.Models;
+using Starknet.Voyager.Explorer.Parameters;
 using Starknet.Voyager.Extensions;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -40,7 +41,7 @@ namespace Starknet.Voyager.Explorer
         public async Task<BlockDetailsExtended> GetBlockDetailsAsync(string blockId, CancellationToken cancellationToken)
         {
             var response = await httpClient.GetAsync($"block/{blockId}", cancellationToken);
-            
+
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<BlockDetailsExtended>(content, jsonSerializerSettings);
@@ -59,7 +60,7 @@ namespace Starknet.Voyager.Explorer
         public async Task<BlocksListDetails> GetBlocksAsync(int pageSize, int page, CancellationToken cancellationToken)
         {
             var response = await httpClient.GetAsync($"blocks?ps={pageSize}&p={page}", cancellationToken);
-            
+
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<BlocksListDetails>(content, jsonSerializerSettings);
@@ -74,7 +75,7 @@ namespace Starknet.Voyager.Explorer
         public async Task<TransactionDetails> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken)
         {
             var response = await httpClient.GetAsync($"txns/{txnHash}", cancellationToken);
-            
+
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<TransactionDetails>(content, jsonSerializerSettings);
@@ -94,7 +95,7 @@ namespace Starknet.Voyager.Explorer
                 $"&rejected={parameters.Rejected}" +
                 $"&ps={parameters.PageSize}" +
                 $"&p={parameters.Page}", cancellationToken);
-            
+
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<TransactionsListDetails>(content, jsonSerializerSettings);
@@ -166,7 +167,7 @@ namespace Starknet.Voyager.Explorer
             return JsonConvert.DeserializeObject<ContractsListDetails>(content, jsonSerializerSettings);
         }
 
-        #region Events
+        #region EVENTS
 
         /// <summary>
         /// List events
@@ -185,6 +186,22 @@ namespace Starknet.Voyager.Explorer
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<EventsListDetails>(content, jsonSerializerSettings);
+        }
+
+        #endregion
+
+        #region TOKENS
+
+        public async Task<TokensListDetails> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken)
+        {
+            var response = await httpClient.GetAsync($"tokens?attribute={parameters.Attribute.GetEnumMemberValue()}" +
+                $"&type={parameters.Type.GetEnumMemberValue()}" +
+                $"&ps={parameters.PageSize}" +
+                $"&p={parameters.Page}", cancellationToken);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<TokensListDetails>(content, jsonSerializerSettings);
         }
 
         #endregion

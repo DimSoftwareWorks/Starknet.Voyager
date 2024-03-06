@@ -132,5 +132,20 @@ namespace Starknet.Voyager.Explorer
 
             return JsonConvert.DeserializeObject<ClassesListDetails>(content, jsonSerializerSettings);
         }
+
+        /// <summary>
+        /// Retrieve contract details
+        /// </summary>
+        /// <param name="contractAddress">The contract's address. .stark domains are supported.</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Get contract details by address</returns>
+        public async Task<ContractDetails> GetContractDetailsAsync(string contractAddress, CancellationToken cancellationToken)
+        {
+            var response = await httpClient.GetAsync($"contracts/{contractAddress}", cancellationToken);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<ContractDetails>(content, jsonSerializerSettings);
+        }
     }
 }

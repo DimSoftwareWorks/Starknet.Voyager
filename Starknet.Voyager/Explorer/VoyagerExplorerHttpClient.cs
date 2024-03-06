@@ -31,6 +31,8 @@ namespace Starknet.Voyager.Explorer
             this.httpClient = httpClient;
         }
 
+        #region BLOCKS
+
         /// <summary>
         /// Retrieve block details.
         /// Get block details by block hash
@@ -65,6 +67,10 @@ namespace Starknet.Voyager.Explorer
 
             return JsonConvert.DeserializeObject<BlocksListDetails>(content, jsonSerializerSettings);
         }
+
+        #endregion
+
+        #region TRANSACTIONS
 
         /// <summary>
         /// Retrieve transaction details
@@ -101,6 +107,10 @@ namespace Starknet.Voyager.Explorer
             return JsonConvert.DeserializeObject<TransactionsListDetails>(content, jsonSerializerSettings);
         }
 
+        #endregion
+
+        #region CLASSES
+
         /// <summary>
         /// Retrieve class details
         /// </summary>
@@ -134,6 +144,10 @@ namespace Starknet.Voyager.Explorer
             return JsonConvert.DeserializeObject<ClassesListDetails>(content, jsonSerializerSettings);
         }
 
+        #endregion
+
+        #region CONTRACTS
+
         /// <summary>
         /// Retrieve contract details
         /// </summary>
@@ -166,6 +180,8 @@ namespace Starknet.Voyager.Explorer
 
             return JsonConvert.DeserializeObject<ContractsListDetails>(content, jsonSerializerSettings);
         }
+
+        #endregion
 
         #region EVENTS
 

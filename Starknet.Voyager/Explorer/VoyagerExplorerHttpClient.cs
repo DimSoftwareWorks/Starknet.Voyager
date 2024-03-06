@@ -99,5 +99,38 @@ namespace Starknet.Voyager.Explorer
 
             return JsonConvert.DeserializeObject<TransactionsListDetails>(content, jsonSerializerSettings);
         }
+
+        /// <summary>
+        /// Retrieve class details
+        /// </summary>
+        /// <param name="classHash">The class's hash</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Get class detail by hash</returns>
+        public async Task<ClassDetails> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken)
+        {
+            var response = await httpClient.GetAsync($"classes/{classHash}", cancellationToken);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<ClassDetails>(content, jsonSerializerSettings);
+        }
+
+        /// <summary>
+        /// List classes
+        /// </summary>
+        /// <param name="pageSize">[ps] The number of items to to return in a page.
+        /// If it's less than 25, then the page size will be 10. If it's 25, then the page size will be 25. If it's greater than 25, then the page size will be 50.</param>
+        /// <param name="page">[p] Which page of items to retrieve. Start with 1 unless you know which page you want. 
+        /// The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Get all classes</returns>
+        public async Task<ClassesListDetails> GetClassesAsync(int pageSize, int page, CancellationToken cancellationToken)
+        {
+            var response = await httpClient.GetAsync($"classes?ps={pageSize}&p={page}", cancellationToken);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<ClassesListDetails>(content, jsonSerializerSettings);
+        }
     }
 }

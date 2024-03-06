@@ -29,6 +29,13 @@ namespace Starknet.Voyager.Explorer
             this.httpClient = httpClient;
         }
 
+        /// <summary>
+        /// Retrieve block details.
+        /// Get block details by block hash
+        /// </summary>
+        /// <param name="blockId"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Details of a single block</returns>
         public async Task<BlockDetailsExtended> GetBlockDetailsAsync(string blockId, CancellationToken cancellationToken)
         {
             var response = await httpClient.GetAsync($"block/{blockId}", cancellationToken);
@@ -38,18 +45,34 @@ namespace Starknet.Voyager.Explorer
             return JsonConvert.DeserializeObject<BlockDetailsExtended>(content, jsonSerializerSettings);
         }
 
-        public async Task<IEnumerable<BlockDetails>> GetBlocksAsync(int pageSize, int page, CancellationToken cancellationToken)
+        /// <summary>
+        /// List blocks.
+        /// Get all blocks
+        /// </summary>
+        /// <param name="pageSize">[ps] The number of items to to return in a page. 
+        /// If it's less than 25, then the page size will be 10. If it's 25, then the page size will be 25. If it's greater than 25, then the page size will be 50.</param>
+        /// <param name="page">[p] Which page of items to retrieve. Start with 1 unless you know which page you want. 
+        /// The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>A list of blocks</returns>
+        public async Task<BlocksListDetails> GetBlocksAsync(int pageSize, int page, CancellationToken cancellationToken)
         {
             var response = await httpClient.GetAsync($"blocks?ps={pageSize}&p={page}", cancellationToken);
             
             var content = await response.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<IEnumerable<BlockDetails>>(content, jsonSerializerSettings);
+            return JsonConvert.DeserializeObject<BlocksListDetails>(content, jsonSerializerSettings);
         }
 
-        public async Task<TransactionDetails> GetTransactionDetailsAsync(string transactionId, CancellationToken cancellationToken)
+        /// <summary>
+        /// Retrieve transaction details
+        /// </summary>
+        /// <param name="txnHash">Transaction hash</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Get block details by block hash</returns>
+        public async Task<TransactionDetails> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken)
         {
-            var response = await httpClient.GetAsync($"transaction/{transactionId}", cancellationToken);
+            var response = await httpClient.GetAsync($"txns/{txnHash}", cancellationToken);
             
             var content = await response.Content.ReadAsStringAsync();
 

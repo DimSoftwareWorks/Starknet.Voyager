@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Starknet.Voyager.Explorer.Models;
+using Starknet.Voyager.Extensions;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
@@ -77,6 +78,26 @@ namespace Starknet.Voyager.Explorer
             var content = await response.Content.ReadAsStringAsync();
 
             return JsonConvert.DeserializeObject<TransactionDetails>(content, jsonSerializerSettings);
+        }
+
+        /// <summary>
+        /// List transactions
+        /// </summary>
+        /// <param name="parameters">Query string parameters</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Get all transactions</returns>
+        public async Task<TransactionsListDetails> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken)
+        {
+            var response = await httpClient.GetAsync($"txns?to={parameters.To}" +
+                $"&block={parameters.Block}" +
+                $"&type={parameters.Type.GetEnumMemberValue()}" +
+                $"&rejected={parameters.Rejected}" +
+                $"&ps={parameters.PageSize}" +
+                $"&p={parameters.Page}", cancellationToken);
+            
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<TransactionsListDetails>(content, jsonSerializerSettings);
         }
     }
 }

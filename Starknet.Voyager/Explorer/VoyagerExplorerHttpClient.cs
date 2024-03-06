@@ -147,5 +147,23 @@ namespace Starknet.Voyager.Explorer
 
             return JsonConvert.DeserializeObject<ContractDetails>(content, jsonSerializerSettings);
         }
+
+        /// <summary>
+        /// List contracts
+        /// </summary>
+        /// <param name="pageSize">[ps] The number of items to to return in a page. 
+        /// If it's less than 25, then the page size will be 10. If it's 25, then the page size will be 25. If it's greater than 25, then the page size will be 50.</param>
+        /// <param name="page">[p] Which page of items to retrieve. Start with 1 unless you know which page you want. The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
+        /// <param name="account">If true, only accounts will be returned. If false, only contracts will be returned. If not specified, both will be returned.</param>
+        /// <param name="cancellationToken"></param>
+        /// <returns>Get all contracts</returns>
+        public async Task<ContractsListDetails> GetContractsAsync(int pageSize, int page, bool account, CancellationToken cancellationToken)
+        {
+            var response = await httpClient.GetAsync($"contracts?ps={pageSize}&p={page}&account={account}", cancellationToken);
+
+            var content = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<ContractsListDetails>(content, jsonSerializerSettings);
+        }
     }
 }

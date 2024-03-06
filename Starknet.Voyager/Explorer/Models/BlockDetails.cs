@@ -20,6 +20,6 @@ namespace Starknet.Voyager.Explorer.Models
 
         public object L1VerificationTxnHash { get; set; }
 
-        public BlockDetailsStatus Status { get; set; }
+        public TransactionDetailsStatus Status { get; set; }
     }
 }

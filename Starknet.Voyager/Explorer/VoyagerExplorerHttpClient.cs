@@ -40,13 +40,36 @@ namespace Starknet.Voyager.Explorer
         /// <param name="blockId"></param>
         /// <param name="cancellationToken"></param>
         /// <returns>Details of a single block</returns>
-        public async Task<BlockDetailsExtended> GetBlockDetailsAsync(string blockId, CancellationToken cancellationToken)
+        public async Task<Result<BlockDetailsExtended>> GetBlockDetailsAsync(string blockHash, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"block/{blockId}", cancellationToken);
+            var response = await httpClient.GetAsync($"/blocks/{blockHash}", cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<BlockDetailsExtended>(content, jsonSerializerSettings);
+            if (!response.IsSuccessStatusCode)
+            {
+                return new Result<BlockDetailsExtended>()
+                {
+                    ErrorMessage = content
+                };
+            }
+
+            try
+            {
+                var result = JsonConvert.DeserializeObject<BlockDetailsExtended>(content, jsonSerializerSettings);
+
+                return new Result<BlockDetailsExtended>
+                {
+                    Value = result,
+                };
+            }
+            catch (JsonException ex)
+            {
+                return new Result<BlockDetailsExtended>()
+                {
+                    Exception = ex
+                };
+            }
         }
 
         /// <summary>
@@ -59,9 +82,9 @@ namespace Starknet.Voyager.Explorer
         /// The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>A list of blocks</returns>
-        public async Task<BlocksListDetails> GetBlocksAsync(int pageSize, int page, CancellationToken cancellationToken)
+        public async Task<BlocksListDetails> GetBlocksAsync(int pageSize, int page, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"blocks?ps={pageSize}&p={page}", cancellationToken);
+            var response = await httpClient.GetAsync($"/blocks?ps={pageSize}&p={page}", cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
@@ -78,9 +101,9 @@ namespace Starknet.Voyager.Explorer
         /// <param name="txnHash">Transaction hash</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Get block details by block hash</returns>
-        public async Task<TransactionDetails> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken)
+        public async Task<TransactionDetails> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"txns/{txnHash}", cancellationToken);
+            var response = await httpClient.GetAsync($"/txns/{txnHash}", cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
@@ -93,9 +116,9 @@ namespace Starknet.Voyager.Explorer
         /// <param name="parameters">Query string parameters</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Get all transactions</returns>
-        public async Task<TransactionsListDetails> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken)
+        public async Task<TransactionsListDetails> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"txns?to={parameters.To}" +
+            var response = await httpClient.GetAsync($"/txns?to={parameters.To}" +
                 $"&block={parameters.Block}" +
                 $"&type={parameters.Type.GetEnumMemberValue()}" +
                 $"&rejected={parameters.Rejected}" +
@@ -117,9 +140,9 @@ namespace Starknet.Voyager.Explorer
         /// <param name="classHash">The class's hash</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Get class detail by hash</returns>
-        public async Task<ClassDetails> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken)
+        public async Task<ClassDetails> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"classes/{classHash}", cancellationToken);
+            var response = await httpClient.GetAsync($"/classes/{classHash}", cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
@@ -135,9 +158,9 @@ namespace Starknet.Voyager.Explorer
         /// The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Get all classes</returns>
-        public async Task<ClassesListDetails> GetClassesAsync(int pageSize, int page, CancellationToken cancellationToken)
+        public async Task<ClassesListDetails> GetClassesAsync(int pageSize, int page, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"classes?ps={pageSize}&p={page}", cancellationToken);
+            var response = await httpClient.GetAsync($"/classes?ps={pageSize}&p={page}", cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
@@ -154,9 +177,9 @@ namespace Starknet.Voyager.Explorer
         /// <param name="contractAddress">The contract's address. .stark domains are supported.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Get contract details by address</returns>
-        public async Task<ContractDetails> GetContractDetailsAsync(string contractAddress, CancellationToken cancellationToken)
+        public async Task<ContractDetails> GetContractDetailsAsync(string contractAddress, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"contracts/{contractAddress}", cancellationToken);
+            var response = await httpClient.GetAsync($"/contracts/{contractAddress}", cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
@@ -172,9 +195,9 @@ namespace Starknet.Voyager.Explorer
         /// <param name="account">If true, only accounts will be returned. If false, only contracts will be returned. If not specified, both will be returned.</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Get all contracts</returns>
-        public async Task<ContractsListDetails> GetContractsAsync(int pageSize, int page, bool account, CancellationToken cancellationToken)
+        public async Task<ContractsListDetails> GetContractsAsync(int pageSize, int page, bool account, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"contracts?ps={pageSize}&p={page}&account={account}", cancellationToken);
+            var response = await httpClient.GetAsync($"/contracts?ps={pageSize}&p={page}&account={account}", cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
@@ -191,9 +214,9 @@ namespace Starknet.Voyager.Explorer
         /// <param name="parameters">Query string parameters</param>
         /// <param name="cancellationToken"></param>
         /// <returns>Get all events</returns>
-        public async Task<EventsListDetails> GetEventsAsync(GetEventsParameters parameters, CancellationToken cancellationToken)
+        public async Task<EventsListDetails> GetEventsAsync(GetEventsParameters parameters, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"events?ps={parameters.PageSize}" +
+            var response = await httpClient.GetAsync($"/events?ps={parameters.PageSize}" +
                 $"&p={parameters.Page}" +
                 $"&contract={parameters.Contract}" +
                 $"&txnHash={parameters.TxnHash}" +
@@ -208,9 +231,9 @@ namespace Starknet.Voyager.Explorer
 
         #region TOKENS
 
-        public async Task<TokensListDetails> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken)
+        public async Task<TokensListDetails> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken = default)
         {
-            var response = await httpClient.GetAsync($"tokens?attribute={parameters.Attribute.GetEnumMemberValue()}" +
+            var response = await httpClient.GetAsync($"/tokens?attribute={parameters.Attribute.GetEnumMemberValue()}" +
                 $"&type={parameters.Type.GetEnumMemberValue()}" +
                 $"&ps={parameters.PageSize}" +
                 $"&p={parameters.Page}", cancellationToken);

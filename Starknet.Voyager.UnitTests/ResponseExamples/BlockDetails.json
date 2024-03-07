@@ -1,0 +1,21 @@
+{
+  "blockNumber": 601992,
+  "hash": "0x286a940d65af4def432d9cfa318daad965d9a9c3ffbc9fab548f3ebdd244e64",
+  "timestamp": 1709732196,
+  "stateRoot": "0x69787acb9b265f8d047207973de6fc16476b8d75cc1a4bdf98e28259b136c84",
+  "txnCount": 164,
+  "messageCount": 0,
+  "eventCount": 939,
+  "prevBlockHash": "0xb0f6b296575c9ff10d3420f9c9cf428b8e4f3371f3b957719d9556cc918bc2",
+  "nextBlockHash": "0x174b7579b55a49cdb6d555ac0880578fbfd7867215f5fd5f0f237b962a65ef6",
+  "confirmations": 1,
+  "sequencerAddress": "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+  "totalFee": "0x01d7b2d70bd1b7a35a",
+  "stepsCount": "3130114",
+  "gasPrice": "0x12fb98f8b6",
+  "version": "0.13.0",
+  "timeToMine": 147,
+  "l1AcceptTime": null,
+  "l1VerificationTxHash": null,
+  "status": "Accepted on L2"
+}

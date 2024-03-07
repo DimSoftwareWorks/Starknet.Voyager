@@ -3,7 +3,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Starknet.Voyager.Explorer.Models;
 using Starknet.Voyager.Explorer.Parameters;
-using Starknet.Voyager.Extensions;
+using Starknet.Voyager.Helpers;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
@@ -37,59 +37,17 @@ namespace Starknet.Voyager.Explorer
         /// Retrieve block details.
         /// Get block details by block hash
         /// </summary>
-        /// <param name="blockId"></param>
-        /// <param name="cancellationToken"></param>
         /// <returns>Details of a single block</returns>
         public async Task<Result<BlockDetailsExtended>> GetBlockDetailsAsync(string blockHash, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/blocks/{blockHash}", cancellationToken);
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            if (!response.IsSuccessStatusCode)
-            {
-                return new Result<BlockDetailsExtended>()
-                {
-                    ErrorMessage = content
-                };
-            }
-
-            try
-            {
-                var result = JsonConvert.DeserializeObject<BlockDetailsExtended>(content, jsonSerializerSettings);
-
-                return new Result<BlockDetailsExtended>
-                {
-                    Value = result,
-                };
-            }
-            catch (JsonException ex)
-            {
-                return new Result<BlockDetailsExtended>()
-                {
-                    Exception = ex
-                };
-            }
-        }
+            => await GetResult<BlockDetailsExtended>($"/blocks/{blockHash}", cancellationToken);
 
         /// <summary>
         /// List blocks.
         /// Get all blocks
         /// </summary>
-        /// <param name="pageSize">[ps] The number of items to to return in a page. 
-        /// If it's less than 25, then the page size will be 10. If it's 25, then the page size will be 25. If it's greater than 25, then the page size will be 50.</param>
-        /// <param name="page">[p] Which page of items to retrieve. Start with 1 unless you know which page you want. 
-        /// The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
-        /// <param name="cancellationToken"></param>
         /// <returns>A list of blocks</returns>
-        public async Task<BlocksListDetails> GetBlocksAsync(int pageSize, int page, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/blocks?ps={pageSize}&p={page}", cancellationToken);
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<BlocksListDetails>(content, jsonSerializerSettings);
-        }
+        public async Task<Result<BlocksListDetails>> GetBlocksAsync(PagingParameters parameters, CancellationToken cancellationToken = default)
+            => await GetResult<BlocksListDetails>($"/blocks?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion
 
@@ -99,36 +57,18 @@ namespace Starknet.Voyager.Explorer
         /// Retrieve transaction details
         /// </summary>
         /// <param name="txnHash">Transaction hash</param>
-        /// <param name="cancellationToken"></param>
         /// <returns>Get block details by block hash</returns>
-        public async Task<TransactionDetails> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/txns/{txnHash}", cancellationToken);
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<TransactionDetails>(content, jsonSerializerSettings);
-        }
+        public async Task<Result<TransactionDetails>> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken = default)
+            => await GetResult<TransactionDetails>($"/txns/{txnHash}", cancellationToken);
 
         /// <summary>
         /// List transactions
         /// </summary>
         /// <param name="parameters">Query string parameters</param>
-        /// <param name="cancellationToken"></param>
         /// <returns>Get all transactions</returns>
-        public async Task<TransactionsListDetails> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/txns?to={parameters.To}" +
-                $"&block={parameters.Block}" +
-                $"&type={parameters.Type.GetEnumMemberValue()}" +
-                $"&rejected={parameters.Rejected}" +
-                $"&ps={parameters.PageSize}" +
-                $"&p={parameters.Page}", cancellationToken);
+        public async Task<Result<TransactionsListDetails>> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken = default)
+            => await GetResult<TransactionsListDetails>($"/txns?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<TransactionsListDetails>(content, jsonSerializerSettings);
-        }
 
         #endregion
 
@@ -138,34 +78,18 @@ namespace Starknet.Voyager.Explorer
         /// Retrieve class details
         /// </summary>
         /// <param name="classHash">The class's hash</param>
-        /// <param name="cancellationToken"></param>
         /// <returns>Get class detail by hash</returns>
-        public async Task<ClassDetails> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/classes/{classHash}", cancellationToken);
+        public async Task<Result<ClassDetails>> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken = default)
+            => await GetResult<ClassDetails>($"/classes/{classHash}", cancellationToken);
 
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<ClassDetails>(content, jsonSerializerSettings);
-        }
 
         /// <summary>
         /// List classes
         /// </summary>
-        /// <param name="pageSize">[ps] The number of items to to return in a page.
-        /// If it's less than 25, then the page size will be 10. If it's 25, then the page size will be 25. If it's greater than 25, then the page size will be 50.</param>
-        /// <param name="page">[p] Which page of items to retrieve. Start with 1 unless you know which page you want. 
-        /// The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
-        /// <param name="cancellationToken"></param>
+        /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all classes</returns>
-        public async Task<ClassesListDetails> GetClassesAsync(int pageSize, int page, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/classes?ps={pageSize}&p={page}", cancellationToken);
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<ClassesListDetails>(content, jsonSerializerSettings);
-        }
+        public async Task<Result<ClassesListDetails>> GetClassesAsync(PagingParameters parameters, CancellationToken cancellationToken = default)
+            => await GetResult<ClassesListDetails>($"/classes?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion
 
@@ -175,34 +99,17 @@ namespace Starknet.Voyager.Explorer
         /// Retrieve contract details
         /// </summary>
         /// <param name="contractAddress">The contract's address. .stark domains are supported.</param>
-        /// <param name="cancellationToken"></param>
         /// <returns>Get contract details by address</returns>
-        public async Task<ContractDetails> GetContractDetailsAsync(string contractAddress, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/contracts/{contractAddress}", cancellationToken);
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<ContractDetails>(content, jsonSerializerSettings);
-        }
+        public async Task<Result<ContractDetails>> GetContractDetailsAsync(string contractAddress, CancellationToken cancellationToken = default)
+            => await GetResult<ContractDetails>($"/contracts/{contractAddress}", cancellationToken);
 
         /// <summary>
         /// List contracts
         /// </summary>
-        /// <param name="pageSize">[ps] The number of items to to return in a page. 
-        /// If it's less than 25, then the page size will be 10. If it's 25, then the page size will be 25. If it's greater than 25, then the page size will be 50.</param>
-        /// <param name="page">[p] Which page of items to retrieve. Start with 1 unless you know which page you want. The JSON response body's lastPage field will indicate the last page you can iterate using such as 3.</param>
-        /// <param name="account">If true, only accounts will be returned. If false, only contracts will be returned. If not specified, both will be returned.</param>
-        /// <param name="cancellationToken"></param>
+        /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all contracts</returns>
-        public async Task<ContractsListDetails> GetContractsAsync(int pageSize, int page, bool account, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/contracts?ps={pageSize}&p={page}&account={account}", cancellationToken);
-
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<ContractsListDetails>(content, jsonSerializerSettings);
-        }
+        public async Task<Result<ContractsListDetails>> GetContractsAsync(GetContractsParameters parameters, CancellationToken cancellationToken = default)
+            => await GetResult<ContractsListDetails>($"/contracts?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion
 
@@ -212,37 +119,56 @@ namespace Starknet.Voyager.Explorer
         /// List events
         /// </summary>
         /// <param name="parameters">Query string parameters</param>
-        /// <param name="cancellationToken"></param>
         /// <returns>Get all events</returns>
-        public async Task<EventsListDetails> GetEventsAsync(GetEventsParameters parameters, CancellationToken cancellationToken = default)
-        {
-            var response = await httpClient.GetAsync($"/events?ps={parameters.PageSize}" +
-                $"&p={parameters.Page}" +
-                $"&contract={parameters.Contract}" +
-                $"&txnHash={parameters.TxnHash}" +
-                $"&blockHash={parameters.BlockHash}", cancellationToken);
+        public async Task<Result<EventsListDetails>> GetEventsAsync(GetEventsParameters parameters, CancellationToken cancellationToken = default)
+            => await GetResult<EventsListDetails>($"/events?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
-            var content = await response.Content.ReadAsStringAsync();
-
-            return JsonConvert.DeserializeObject<EventsListDetails>(content, jsonSerializerSettings);
-        }
 
         #endregion
 
         #region TOKENS
 
-        public async Task<TokensListDetails> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken = default)
+        /// <summary>
+        /// List tokens
+        /// </summary>
+        /// <param name="parameters">Query string parameters</param>
+        /// <returns>List all deployed tokens on the network that conforms to the token standards. This includes token standards like ERC20, ERC721 and ERC1155</returns>
+        public async Task<Result<TokensListDetails>> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken = default)
+            => await GetResult<TokensListDetails>($"/tokens?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
+
+
+        #endregion
+
+        private async Task<Result<T>> GetResult<T>(string path, CancellationToken cancellationToken)
         {
-            var response = await httpClient.GetAsync($"/tokens?attribute={parameters.Attribute.GetEnumMemberValue()}" +
-                $"&type={parameters.Type.GetEnumMemberValue()}" +
-                $"&ps={parameters.PageSize}" +
-                $"&p={parameters.Page}", cancellationToken);
+            var response = await httpClient.GetAsync(path, cancellationToken);
 
             var content = await response.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<TokensListDetails>(content, jsonSerializerSettings);
-        }
+            if (!response.IsSuccessStatusCode)
+            {
+                return new Result<T>()
+                {
+                    ErrorMessage = content
+                };
+            }
 
-        #endregion
+            try
+            {
+                var result = JsonConvert.DeserializeObject<T>(content, jsonSerializerSettings);
+
+                return new Result<T>
+                {
+                    Value = result,
+                };
+            }
+            catch (JsonException ex)
+            {
+                return new Result<T>()
+                {
+                    Exception = ex
+                };
+            }
+        }
     }
 }

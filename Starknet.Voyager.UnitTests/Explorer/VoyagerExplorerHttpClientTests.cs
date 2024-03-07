@@ -21,7 +21,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
         }
 
         [Fact]
-        public async Task GetBlockDetailsAsyncShouldReturnResponseWithStatusOkWhenResponseIsValid()
+        public async Task GetBlockDetailsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
         {
             // Arrange
 

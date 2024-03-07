@@ -10,6 +10,8 @@ namespace Starknet.Voyager.Explorer.Models
 
         public string ErrorMessage { get; set; }
 
+        public int? StatusCode { get; set; }
+
         public Exception Exception { get; set; }
     }
 }

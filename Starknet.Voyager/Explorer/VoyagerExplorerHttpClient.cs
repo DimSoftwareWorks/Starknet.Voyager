@@ -149,7 +149,8 @@ namespace Starknet.Voyager.Explorer
             {
                 return new Result<T>()
                 {
-                    ErrorMessage = content
+                    ErrorMessage = content,
+                    StatusCode = (int)response.StatusCode
                 };
             }
 
@@ -160,6 +161,7 @@ namespace Starknet.Voyager.Explorer
                 return new Result<T>
                 {
                     Value = result,
+                    StatusCode = 200
                 };
             }
             catch (JsonException ex)

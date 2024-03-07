@@ -28,7 +28,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
             var file = "ResponseExamples/BlockDetails.json";
             var blockHash = "0x286a940d65af4def432d9cfa318daad965d9a9c3ffbc9fab548f3ebdd244e64";
 
-            await SetupWireMockServer($"/blocks/{blockHash}", 200, file);
+            SetupWireMockServer($"/blocks/{blockHash}", 200, await File.ReadAllTextAsync(file));
 
             // Act
 
@@ -58,7 +58,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
             var file = "ResponseExamples/MissingAuthToken.json";
             var blockHash = "0x286a940d65af4def432d9cfa318daad965d9a9c3ffbc9fab548f3ebdd244e641";
 
-            await SetupWireMockServer($"/blocks/{blockHash}", 404, file);
+            SetupWireMockServer($"/blocks/{blockHash}", 404, await File.ReadAllTextAsync(file));
 
             // Act
 
@@ -80,7 +80,34 @@ namespace Starknet.Voyager.UnitTests.Explorer
             Reset();
         }
 
-        private async Task SetupWireMockServer( string path, int code, string file)
+        [Fact]
+        public async Task GetBlockDetailsAsync_ShouldReturnJsonExceptionResult_WhenResponseIsInvalid()
+        {
+            // Arrange
+
+            var blockHash = "0x286a940d65af4def432d9cfa318daad965d9a9c3ffbc9fab548f3ebdd244e641";
+
+            SetupWireMockServer($"/blocks/{blockHash}", 200, "{{");
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetBlockDetailsAsync(blockHash);
+
+            // Assert
+
+            Assert.False(result.IsSuccess);
+            Assert.Null(result.StatusCode);
+            Assert.Null(result.ErrorMessage);
+            Assert.NotNull(result.Exception);
+            Assert.IsType<JsonReaderException>(result.Exception);
+            Assert.Null(result.Value);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        private void SetupWireMockServer( string path, int code, string body)
         {
             wireMockServer
                 .Given(
@@ -90,7 +117,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
                 .RespondWith(
                     Response.Create()
                         .WithStatusCode(code)
-                        .WithBody(await File.ReadAllTextAsync(file)));
+                        .WithBody(body));
         }
 
         private void Reset()

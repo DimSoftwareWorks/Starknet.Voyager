@@ -17,7 +17,7 @@ namespace Starknet.Voyager.Explorer
 
         Task<Result<ClassDetails>> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken = default);
 
-        Task<Result<ClassesListDetails>> GetClassesAsync(PagingParameters parameters, CancellationToken cancellationToken = default);
+        Task<Result<ClassesListDetails>> GetClassesAsync(PagingParameters parameters = default, CancellationToken cancellationToken = default);
 
         Task<Result<ContractDetails>> GetContractDetailsAsync(string contractAddress, CancellationToken cancellationToken = default);
 

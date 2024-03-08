@@ -376,6 +376,74 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #endregion
 
+        #region GetClassesAsync
+
+        [Fact]
+        public async Task GetClassesAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/Classes.json";
+
+            SetupWireMockServer($"/classes", 200, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetClassesAsync();
+
+            // Assert
+
+            await AssertSuccess(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetClassesAsync_ShouldReturnResponseWithNotFound_WhenResponseIsNotSuccess()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/MissingAuthToken.json";
+
+            SetupWireMockServer($"/classes", 404, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetClassesAsync();
+
+            // Assert
+
+            await AssertError(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetClassesAsync_ShouldReturnJsonExceptionResult_WhenResponseIsInvalid()
+        {
+            // Arrange
+
+            SetupWireMockServer($"/classes", 200, "{{");
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetClassesAsync();
+
+            // Assert
+
+            AssertException(result);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        #endregion
+
         #region Support
 
         private void SetupWireMockServer(string path, int code, string body)

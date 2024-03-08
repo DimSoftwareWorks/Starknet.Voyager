@@ -88,7 +88,7 @@ namespace Starknet.Voyager.Explorer
         /// </summary>
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all classes</returns>
-        public async Task<Result<ClassesListDetails>> GetClassesAsync(PagingParameters parameters, CancellationToken cancellationToken = default)
+        public async Task<Result<ClassesListDetails>> GetClassesAsync(PagingParameters parameters = default, CancellationToken cancellationToken = default)
             => await GetResult<ClassesListDetails>($"/classes{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion

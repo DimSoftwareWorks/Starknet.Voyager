@@ -48,6 +48,9 @@
 	  <None Update="ResponseExamples\Blocks.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
+	  <None Update="ResponseExamples\ClassDetails.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="ResponseExamples\MissingAuthToken.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

@@ -1,0 +1,14 @@
+{
+  "hash": "0x03530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9",
+  "version": null,
+  "transactionHash": "0x17a928f04d4ebc50907d8ed914476cfe326f8623fc970c6de4ec108ffe91b1b",
+  "contractsCount": 1028596,
+  "declaredBy": "0x00b4fb8caaaac44ae3e86884261dda6c05f071973e4013b70845a43ffb8476ae",
+  "creationTimestamp": 1686191418,
+  "type": 8,
+  "isAccount": false,
+  "isProxy": true,
+  "isErcToken": false,
+  "classAlias": "OKXProxy",
+  "verifiedTimestamp": null
+}

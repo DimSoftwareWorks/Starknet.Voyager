@@ -302,6 +302,80 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #endregion
 
+        #region GetClassDetailsAsync
+
+        [Fact]
+        public async Task GetClassDetailsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        {
+            // Arrange
+
+            var classHash = "0x03530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9";
+
+            var file = "ResponseExamples/ClassDetails.json";
+
+            SetupWireMockServer($"/classes/{classHash}", 200, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetClassDetailsAsync(classHash);
+
+            // Assert
+
+            await AssertSuccess(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetClassDetailsAsync_ShouldReturnResponseWithNotFound_WhenResponseIsNotSuccess()
+        {
+            // Arrange
+
+            var classHash = "0x03530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9";
+            
+            var file = "ResponseExamples/MissingAuthToken.json";
+
+            SetupWireMockServer($"/classes/{classHash}", 404, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetClassDetailsAsync(classHash);
+
+            // Assert
+
+            await AssertError(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetClassDetailsAsync_ShouldReturnJsonExceptionResult_WhenResponseIsInvalid()
+        {
+            // Arrange
+
+            var classHash = "0x03530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9";
+
+            SetupWireMockServer($"/classes/{classHash}", 200, "{{");
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetClassDetailsAsync(classHash);
+
+            // Assert
+
+            AssertException(result);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        #endregion
+
         #region Support
 
         private void SetupWireMockServer(string path, int code, string body)

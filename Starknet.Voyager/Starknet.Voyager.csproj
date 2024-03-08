@@ -4,10 +4,16 @@
 		<TargetFramework>netstandard2.1</TargetFramework>
 		<AnalysisMode>All</AnalysisMode>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<PackageId>DimSoft.Starknet.Voyager</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<Authors>DimSoftware</Authors>
 		<Company>DimSoftwareWorks</Company>
+		<PackageId>DimSoft.Starknet.Voyager</PackageId>
 		<PackageDescription>Starknet Voyager Explorer</PackageDescription>
+		<PackageIcon>voyager.png</PackageIcon>
+		<PackageTags>Starknet, Voyager, Explorer, Block Explorer, Blockchain, Crypto, Cryptocurrency, REST, Http Client, Client</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/DimSoftwareWorks/Starknet.Voyager</RepositoryUrl>
 	</PropertyGroup>
 

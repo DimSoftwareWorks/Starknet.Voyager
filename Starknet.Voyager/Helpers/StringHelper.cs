@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Starknet.Voyager.Helpers
 {
-    public static class StringHelper
+    internal static class StringHelper
     {
         /// <summary>
         /// Converts class properties into a query string.

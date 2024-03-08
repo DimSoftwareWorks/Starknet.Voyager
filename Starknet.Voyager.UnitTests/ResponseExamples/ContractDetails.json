@@ -1,0 +1,18 @@
+{
+  "address": "0x07faf54d35eb92d381cb5d3b9ba6b35ccf297980e35be22ecfe07eafd2a4ac48",
+  "blockHash": "0x701838987e597a6cb3489d93cb41e8827cc62048ca5fb690a1cf62d8a9a2bc5",
+  "blockNumber": 29410,
+  "classAlias": "Argent",
+  "classHash": "0x01a736d6ed154502257f02b1ccdf4d9d1089f80811cd6acad48e6b6a9d1f2003",
+  "contractAlias": null,
+  "creationTimestamp": 1680260250,
+  "isAccount": true,
+  "isErcToken": false,
+  "isProxy": false,
+  "nonce": "0x64",
+  "verifiedTimestamp": null,
+  "type": "ArgentX",
+  "version": "2.0.0",
+  "tokenName": null,
+  "tokenSymbol": null
+}

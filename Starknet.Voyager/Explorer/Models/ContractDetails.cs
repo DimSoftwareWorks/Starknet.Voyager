@@ -14,7 +14,7 @@
         
         public bool IsProxy { get; set; }
 
-        public int Type { get; set; }
+        public string Type { get; set; }
         
         public int CreationTimestamp { get; set; }
         
@@ -30,7 +30,7 @@
         
         public string BlockHash { get; set; }
         
-        public int Nonce { get; set; }
+        public string Nonce { get; set; }
         
         public string TokenName { get; set; }
         

@@ -444,6 +444,78 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #endregion
 
+        #region GetContractDetailsAsync
+
+        [Fact]
+        public async Task GetContractDetailsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/ContractDetails.json";
+            var contractAddress = "0x07faf54d35eb92d381cb5d3b9ba6b35ccf297980e35be22ecfe07eafd2a4ac48";
+
+            SetupWireMockServer($"/contracts/{contractAddress}", 200, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetContractDetailsAsync(contractAddress);
+
+            // Assert
+
+            await AssertSuccess(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetContractDetailsAsync_ShouldReturnResponseWithNotFound_WhenResponseIsNotSuccess()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/MissingAuthToken.json";
+            var contractAddress = "0x07faf54d35eb92d381cb5d3b9ba6b35ccf297980e35be22ecfe07eafd2a4ac48";
+
+            SetupWireMockServer($"/contracts/{contractAddress}", 404, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetContractDetailsAsync(contractAddress);
+
+            // Assert
+
+            await AssertError(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetContractDetailsAsync_ShouldReturnJsonExceptionResult_WhenResponseIsInvalid()
+        {
+            // Arrange
+
+            var contractAddress = "0x07faf54d35eb92d381cb5d3b9ba6b35ccf297980e35be22ecfe07eafd2a4ac48";
+
+            SetupWireMockServer($"/contracts/{contractAddress}", 200, "{{");
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetContractDetailsAsync(contractAddress);
+
+            // Assert
+
+            AssertException(result);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        #endregion
+
         #region Support
 
         private void SetupWireMockServer(string path, int code, string body)

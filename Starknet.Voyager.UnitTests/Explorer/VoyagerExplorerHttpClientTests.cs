@@ -160,7 +160,83 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #endregion
 
-        private void SetupWireMockServer( string path, int code, string body)
+        #region GetTransactionDetailsAsync
+
+        [Fact]
+        public async Task GetTransactionDetailsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/TransactionDetails.json";
+
+            var transactionHash = "0x70d339df281b94e254253d6bf09811dae9cc1e3222fd1b313e7a98a34d84b6";
+
+            SetupWireMockServer($"/txns/{transactionHash}", 200, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetTransactionDetailsAsync(transactionHash);
+
+            // Assert
+
+            await AssertSuccess(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetTransactionDetailsAsync_ShouldReturnResponseWithNotFound_WhenResponseIsNotSuccess()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/MissingAuthToken.json";
+
+            var transactionHash = "0x70d339df281b94e254253d6bf09811dae9cc1e3222fd1b313e7a98a34d84b6";
+
+            SetupWireMockServer($"/txns/{transactionHash}", 404, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetTransactionDetailsAsync(transactionHash);
+
+            // Assert
+
+            await AssertError(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetTransactionDetailsAsync_ShouldReturnJsonExceptionResult_WhenResponseIsInvalid()
+        {
+            // Arrange
+
+            var transactionHash = "0x70d339df281b94e254253d6bf09811dae9cc1e3222fd1b313e7a98a34d84b6";
+            
+            SetupWireMockServer($"/txns/{transactionHash}", 200, "{{");
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetTransactionDetailsAsync(transactionHash);
+
+            // Assert
+
+            AssertException(result);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        #endregion
+
+        #region Support
+
+        private void SetupWireMockServer(string path, int code, string body)
         {
             wireMockServer
                 .Given(
@@ -173,7 +249,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
                         .WithBody(body));
         }
 
-        private async Task AssertSuccess<T>(Result<T> result, string file) 
+        private async Task AssertSuccess<T>(Result<T> result, string file)
             where T : class
         {
             Assert.True(result.IsSuccess);
@@ -224,5 +300,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
         {
             return JsonConvert.SerializeObject(JsonConvert.DeserializeObject<T>(value));
         }
+
+        #endregion
     }
 }

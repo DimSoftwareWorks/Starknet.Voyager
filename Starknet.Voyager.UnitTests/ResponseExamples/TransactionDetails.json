@@ -1,0 +1,24 @@
+{
+  "actualFee": "245353473153332",
+  "nonce": "0x0",
+  "blockNumber": 603187,
+  "classAlias": "OKXProxy",
+  "classHash": "0x03530cc4759d78042f1b543bf797f5f3d647cde0388c33734cf91b7f7b9314a9",
+  "contractAddress": "0x03106265693380d3e5cd263f25c12605dedcd59f245d00ee0a8b5142d1a1e5c9",
+  "contractAddressSalt": "0x3790287eed3c35c5c91de791dc7cbb55bb033a5f2f2962408ae93456524b6be",
+  "contractAlias": null,
+  "hash": "0x70d339df281b94e254253d6bf09811dae9cc1e3222fd1b313e7a98a34d84b6",
+  "index": 180,
+  "l1VerificationHash": null,
+  "maxFee": "0x121382509e000",
+  "senderAddress": null,
+  "signature": [
+    "0x298215735124e36e611d609f3907f90d4ade979d91545751ebc38675403695c",
+    "0x3b3d21b5bb2490e57dbdcceff4b1958955ab20a39ec159c2d83751cbb381220"
+  ],
+  "status": "Accepted on L2",
+  "timestamp": 1709889513,
+  "type": "DEPLOY_ACCOUNT",
+  "version": "0x1",
+  "revertError": null
+}

@@ -1,0 +1,1007 @@
+{
+  "items": [
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 289,
+      "number": 2,
+      "data": [
+        "0x64d6f6e5962b89bf32d7527755354f320ad331be10ce27b2255e00069117b68",
+        "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+        "0x8f5d243a9e6e",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x1dcef5530143840169f3c881b20c8a61d915aa1b8383c13a6b9f6e72e95baf",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x64d6f6e5962b89bf32d7527755354f320ad331be10ce27b2255e00069117b68",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x8f5d243a9e6e",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x1dcef5530143840169f3c881b20c8a61d915aa1b8383c13a6b9f6e72e95baf_2",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 289,
+      "number": 1,
+      "data": [
+        "0x1",
+        "0x1",
+        "0x1"
+      ],
+      "fromAddress": "0x064d6f6e5962b89bf32d7527755354f320ad331be10ce27b2255e00069117b68",
+      "classHash": null,
+      "transactionHash": "0x1dcef5530143840169f3c881b20c8a61d915aa1b8383c13a6b9f6e72e95baf",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x1dcde06aabdbca2f80aa51392b345d7549d7757aa855f7e37f5d335ac8243b1",
+      "name": "TransactionExecuted",
+      "nestedName": "TransactionExecuted",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "response",
+          "value": [
+            "0x1"
+          ],
+          "type": "core::array::Span::<core::array::Span::<core::felt252>>"
+        }
+      ],
+      "keyDecoded": [
+        {
+          "name": "hash",
+          "value": "0x1dcef5530143840169f3c881b20c8a61d915aa1b8383c13a6b9f6e72e95baf",
+          "type": "core::felt252"
+        }
+      ],
+      "eventId": "0x1dcef5530143840169f3c881b20c8a61d915aa1b8383c13a6b9f6e72e95baf_1",
+      "classAlias": null,
+      "contractAlias": null,
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 289,
+      "number": 0,
+      "data": [
+        "0x64d6f6e5962b89bf32d7527755354f320ad331be10ce27b2255e00069117b68",
+        "0x1f0932156d7c8f3d02ff6a5af152eb15b537ea15ce1c7db62387a89e7f4b898",
+        "0xaa87bee538000",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x1dcef5530143840169f3c881b20c8a61d915aa1b8383c13a6b9f6e72e95baf",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x64d6f6e5962b89bf32d7527755354f320ad331be10ce27b2255e00069117b68",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x1f0932156d7c8f3d02ff6a5af152eb15b537ea15ce1c7db62387a89e7f4b898",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x0aa87bee538000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x1dcef5530143840169f3c881b20c8a61d915aa1b8383c13a6b9f6e72e95baf_0",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 13,
+      "data": [
+        "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+        "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+        "0x206040f131efe",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x0206040f131efe",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_13",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 12,
+      "data": [
+        "0x2",
+        "0x1",
+        "0x1",
+        "0x1",
+        "0x1"
+      ],
+      "fromAddress": "0x03323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x1dcde06aabdbca2f80aa51392b345d7549d7757aa855f7e37f5d335ac8243b1",
+      "name": "TransactionExecuted",
+      "nestedName": "TransactionExecuted",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "response",
+          "value": [
+            "0x1",
+            "0x1"
+          ],
+          "type": "core::array::Span::<core::array::Span::<core::felt252>>"
+        }
+      ],
+      "keyDecoded": [
+        {
+          "name": "hash",
+          "value": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+          "type": "core::felt252"
+        }
+      ],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_12",
+      "classAlias": null,
+      "contractAlias": null,
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 11,
+      "data": [
+        "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+        "0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+        "0x6f05b59d3b200000",
+        "0x0",
+        "0x49d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+        "0x108a6dbd27593f",
+        "0x0",
+        "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1"
+      ],
+      "fromAddress": "0x04270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0xe316f0d9d2a3affa97de1d99bb2aac0538e2666d0d8545545ead241ef0ccab",
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_11",
+      "classAlias": null,
+      "contractAlias": "AVNU: Exchange",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 10,
+      "data": [
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+        "0x108a6dbd27593f",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x108a6dbd27593f",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_10",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 9,
+      "data": [
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x360fb3a51bd291e5db0892b6249918a5689bc61760adcb350fe39cd725e1d22",
+        "0xd8d89b1faa",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x360fb3a51bd291e5db0892b6249918a5689bc61760adcb350fe39cd725e1d22",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0xd8d89b1faa",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_9",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 8,
+      "data": [
+        "0x6720b763aac6608ceba3f9069bebb0f990cd96b26071b3fa2a2109940f90db2",
+        "0x6f05b59d3b200000",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x108b4695c278e9",
+        "0x0",
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f"
+      ],
+      "fromAddress": "0x068400056dccee818caa7e8a2c305f9a60d255145bac22d6c5c9bf9e2e046b71",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0xe316f0d9d2a3affa97de1d99bb2aac0538e2666d0d8545545ead241ef0ccab",
+      "name": "Swap",
+      "nestedName": "Swap",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "sender",
+          "value": "0x6720b763aac6608ceba3f9069bebb0f990cd96b26071b3fa2a2109940f90db2",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "amount_0_in",
+          "value": "0x6f05b59d3b200000",
+          "type": "core::integer::u256"
+        },
+        {
+          "name": "amount_1_in",
+          "value": "0x00",
+          "type": "core::integer::u256"
+        },
+        {
+          "name": "amount_0_out",
+          "value": "0x00",
+          "type": "core::integer::u256"
+        },
+        {
+          "name": "amount_1_out",
+          "value": "0x108b4695c278e9",
+          "type": "core::integer::u256"
+        },
+        {
+          "name": "to",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_8",
+      "classAlias": null,
+      "contractAlias": null,
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 7,
+      "data": [
+        "0x14f9161355e7b5eec776c",
+        "0x0",
+        "0x320792dfcbaa8dc3a1",
+        "0x0"
+      ],
+      "fromAddress": "0x068400056dccee818caa7e8a2c305f9a60d255145bac22d6c5c9bf9e2e046b71",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0xe14a408baf7f453312eec68e9b7d728ec5337fbdf671f917ee8c80f3255232",
+      "name": "Sync",
+      "nestedName": "Sync",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "reserve_0",
+          "value": "0x014f9161355e7b5eec776c",
+          "type": "core::integer::u256"
+        },
+        {
+          "name": "reserve_1",
+          "value": "0x320792dfcbaa8dc3a1",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_7",
+      "classAlias": null,
+      "contractAlias": null,
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 6,
+      "data": [
+        "0x68400056dccee818caa7e8a2c305f9a60d255145bac22d6c5c9bf9e2e046b71",
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x108b4695c278e9",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x68400056dccee818caa7e8a2c305f9a60d255145bac22d6c5c9bf9e2e046b71",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x108b4695c278e9",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_6",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 5,
+      "data": [
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x68400056dccee818caa7e8a2c305f9a60d255145bac22d6c5c9bf9e2e046b71",
+        "0x6f05b59d3b200000",
+        "0x0"
+      ],
+      "fromAddress": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x68400056dccee818caa7e8a2c305f9a60d255145bac22d6c5c9bf9e2e046b71",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x6f05b59d3b200000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_5",
+      "classAlias": null,
+      "contractAlias": "Starknet Token (STRK)",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 4,
+      "data": [
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x6720b763aac6608ceba3f9069bebb0f990cd96b26071b3fa2a2109940f90db2",
+        "0x0",
+        "0x0"
+      ],
+      "fromAddress": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x134692b230b9e1ffa39098904722134159652b09c5bc41d88d6698779d228ff",
+      "name": "Approval",
+      "nestedName": "Approval",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "owner",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "spender",
+          "value": "0x6720b763aac6608ceba3f9069bebb0f990cd96b26071b3fa2a2109940f90db2",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x00",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_4",
+      "classAlias": null,
+      "contractAlias": "Starknet Token (STRK)",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 3,
+      "data": [
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x6720b763aac6608ceba3f9069bebb0f990cd96b26071b3fa2a2109940f90db2",
+        "0x6f05b59d3b200000",
+        "0x0"
+      ],
+      "fromAddress": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x134692b230b9e1ffa39098904722134159652b09c5bc41d88d6698779d228ff",
+      "name": "Approval",
+      "nestedName": "Approval",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "owner",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "spender",
+          "value": "0x6720b763aac6608ceba3f9069bebb0f990cd96b26071b3fa2a2109940f90db2",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x6f05b59d3b200000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_3",
+      "classAlias": null,
+      "contractAlias": "Starknet Token (STRK)",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 2,
+      "data": [
+        "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x6f05b59d3b200000",
+        "0x0"
+      ],
+      "fromAddress": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x6f05b59d3b200000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_2",
+      "classAlias": null,
+      "contractAlias": "Starknet Token (STRK)",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 1,
+      "data": [
+        "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x0",
+        "0x0"
+      ],
+      "fromAddress": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x134692b230b9e1ffa39098904722134159652b09c5bc41d88d6698779d228ff",
+      "name": "Approval",
+      "nestedName": "Approval",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "owner",
+          "value": "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "spender",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x00",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_1",
+      "classAlias": null,
+      "contractAlias": "Starknet Token (STRK)",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 288,
+      "number": 0,
+      "data": [
+        "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+        "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+        "0x6f05b59d3b200000",
+        "0x0"
+      ],
+      "fromAddress": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "classHash": null,
+      "transactionHash": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x134692b230b9e1ffa39098904722134159652b09c5bc41d88d6698779d228ff",
+      "name": "Approval",
+      "nestedName": "Approval",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "owner",
+          "value": "0x3323c155fd6b574760c96a99dd2ddfdba661cc3a38ff874ed24009c0a8824c1",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "spender",
+          "value": "0x4270219d365d6b017231b52e92b3fb5d7c8378b05e9abc97724537a80e93b0f",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x6f05b59d3b200000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x35c7c146c14763d1738ac840586f91e5be2287b3263185092f68d698ae6f4f1_0",
+      "classAlias": null,
+      "contractAlias": "Starknet Token (STRK)",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 287,
+      "number": 1,
+      "data": [
+        "0x66a78432f608e2d20ee09ce84af44ff3c73caa40c049f85114701b2e84a070",
+        "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+        "0x8fed6d799d39",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x32d5abbc08d0103eda1ca897496a8e154eb69f35d3f69d6387c0d1c1b2ca055",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x66a78432f608e2d20ee09ce84af44ff3c73caa40c049f85114701b2e84a070",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x8fed6d799d39",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x32d5abbc08d0103eda1ca897496a8e154eb69f35d3f69d6387c0d1c1b2ca055_1",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 287,
+      "number": 0,
+      "data": [
+        "0x66a78432f608e2d20ee09ce84af44ff3c73caa40c049f85114701b2e84a070",
+        "0x7a081e9e25d4f3920beea9ffbdfee9aaae8c9b7f0c9132a96050c280bfbffc7",
+        "0x19945ca2620000",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x32d5abbc08d0103eda1ca897496a8e154eb69f35d3f69d6387c0d1c1b2ca055",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x66a78432f608e2d20ee09ce84af44ff3c73caa40c049f85114701b2e84a070",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x7a081e9e25d4f3920beea9ffbdfee9aaae8c9b7f0c9132a96050c280bfbffc7",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x19945ca2620000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x32d5abbc08d0103eda1ca897496a8e154eb69f35d3f69d6387c0d1c1b2ca055_0",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 286,
+      "number": 2,
+      "data": [
+        "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+        "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+        "0x8f1b8e925929",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x2c91649b23332c80d327c7a91c673b134f7541133134e8933ea750ca5936937",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x8f1b8e925929",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x2c91649b23332c80d327c7a91c673b134f7541133134e8933ea750ca5936937_2",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 286,
+      "number": 1,
+      "data": [
+        "0x2c91649b23332c80d327c7a91c673b134f7541133134e8933ea750ca5936937",
+        "0x1",
+        "0x1"
+      ],
+      "fromAddress": "0x040278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+      "classHash": null,
+      "transactionHash": "0x2c91649b23332c80d327c7a91c673b134f7541133134e8933ea750ca5936937",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x5ad857f66a5b55f1301ff1ed7e098ac6d4433148f0b72ebc4a2945ab85ad53",
+      "eventId": "0x2c91649b23332c80d327c7a91c673b134f7541133134e8933ea750ca5936937_1",
+      "classAlias": null,
+      "contractAlias": null,
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 286,
+      "number": 0,
+      "data": [
+        "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+        "0x251e7b8d33d73ce446992c13740086b2b8a6653aa03137e291338979eceb335",
+        "0x138ddbdcd8000",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x2c91649b23332c80d327c7a91c673b134f7541133134e8933ea750ca5936937",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x251e7b8d33d73ce446992c13740086b2b8a6653aa03137e291338979eceb335",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x0138ddbdcd8000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x2c91649b23332c80d327c7a91c673b134f7541133134e8933ea750ca5936937_0",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 285,
+      "number": 2,
+      "data": [
+        "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+        "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+        "0x8f1b8e925929",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x27f401d0f6cf48820f2c34d4904712f5ba1db3396bea34bdd3c6ebc8f3404e9",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x1176a1bd84444c89232ec27754698e5d2e7e1a7f1539f12027f28b23ec9f3d8",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x8f1b8e925929",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x27f401d0f6cf48820f2c34d4904712f5ba1db3396bea34bdd3c6ebc8f3404e9_2",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 285,
+      "number": 1,
+      "data": [
+        "0x27f401d0f6cf48820f2c34d4904712f5ba1db3396bea34bdd3c6ebc8f3404e9",
+        "0x1",
+        "0x1"
+      ],
+      "fromAddress": "0x040278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+      "classHash": null,
+      "transactionHash": "0x27f401d0f6cf48820f2c34d4904712f5ba1db3396bea34bdd3c6ebc8f3404e9",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x5ad857f66a5b55f1301ff1ed7e098ac6d4433148f0b72ebc4a2945ab85ad53",
+      "eventId": "0x27f401d0f6cf48820f2c34d4904712f5ba1db3396bea34bdd3c6ebc8f3404e9_1",
+      "classAlias": null,
+      "contractAlias": null,
+      "abiVerified": false
+    },
+    {
+      "blockNumber": 603253,
+      "transactionNumber": 285,
+      "number": 0,
+      "data": [
+        "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+        "0x24a11af2f1a33bd38405a9ec074880122b56e391dbfa665fff62b132fcac176",
+        "0x12795f58d5000",
+        "0x0"
+      ],
+      "fromAddress": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "classHash": null,
+      "transactionHash": "0x27f401d0f6cf48820f2c34d4904712f5ba1db3396bea34bdd3c6ebc8f3404e9",
+      "blockHash": "PENDING",
+      "timestamp": 1709897174,
+      "selector": "0x99cd8bde557814842a3121e8ddfd433a539b8c9f14bf31ebf108d12e6196e9",
+      "name": "Transfer",
+      "nestedName": "Transfer",
+      "nestedEventNames": [],
+      "dataDecoded": [
+        {
+          "name": "from",
+          "value": "0x40278b94e47129bb6be4f05e427b2e2d19fbaa0154689622c3bb2d5ee666ea3",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "to",
+          "value": "0x24a11af2f1a33bd38405a9ec074880122b56e391dbfa665fff62b132fcac176",
+          "type": "core::starknet::contract_address::ContractAddress"
+        },
+        {
+          "name": "value",
+          "value": "0x012795f58d5000",
+          "type": "core::integer::u256"
+        }
+      ],
+      "keyDecoded": [],
+      "eventId": "0x27f401d0f6cf48820f2c34d4904712f5ba1db3396bea34bdd3c6ebc8f3404e9_0",
+      "classAlias": null,
+      "contractAlias": "StarkGate: ETH Token",
+      "abiVerified": false
+    }
+  ],
+  "lastPage": 20432320
+}

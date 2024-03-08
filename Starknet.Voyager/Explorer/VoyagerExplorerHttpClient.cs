@@ -120,7 +120,7 @@ namespace Starknet.Voyager.Explorer
         /// </summary>
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all events</returns>
-        public async Task<Result<EventsListDetails>> GetEventsAsync(GetEventsParameters parameters, CancellationToken cancellationToken = default)
+        public async Task<Result<EventsListDetails>> GetEventsAsync(GetEventsParameters parameters = default, CancellationToken cancellationToken = default)
             => await GetResult<EventsListDetails>($"/events{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
 

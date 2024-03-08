@@ -39,8 +39,8 @@ namespace Starknet.Voyager.Explorer.Models
 
         public IEnumerable<string> Data { get; set; } = new List<string>();
 
-        public IEnumerable<object> KeyDecoded { get; set; } = new List<object>();
+        public IEnumerable<KeyDecodedDetails> KeyDecoded { get; set; } = new List<KeyDecodedDetails>();
 
-        public IEnumerable<object> DataDecoded { get; set; } = new List<object>();
+        public IEnumerable<DataDecodedDetails> DataDecoded { get; set; } = new List<DataDecodedDetails>();
     }
 }

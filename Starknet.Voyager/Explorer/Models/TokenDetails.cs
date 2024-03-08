@@ -6,16 +6,16 @@ namespace Starknet.Voyager.Explorer.Models
     {
         public string Address { get; set; }
         
-        public TokenType type { get; set; }
+        public TokenType Type { get; set; }
         
         public string Name { get; set; }
         
         public string Symbol { get; set; }
         
-        public int decimals { get; set; }
+        public int Decimals { get; set; }
         
-        public string transfers { get; set; }
+        public string Transfers { get; set; }
         
-        public string holders { get; set; }
+        public string Holders { get; set; }
     }
 }

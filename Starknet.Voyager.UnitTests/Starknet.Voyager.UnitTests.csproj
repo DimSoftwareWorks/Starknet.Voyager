@@ -66,6 +66,9 @@
 	  <None Update="ResponseExamples\MissingAuthToken.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
+	  <None Update="ResponseExamples\Tokens.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="ResponseExamples\TransactionDetails.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

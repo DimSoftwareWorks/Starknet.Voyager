@@ -25,6 +25,6 @@ namespace Starknet.Voyager.Explorer
 
         Task<Result<EventsListDetails>> GetEventsAsync(GetEventsParameters parameters = default, CancellationToken cancellationToken = default);
 
-        Task<Result<TokensListDetails>> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken = default);
+        Task<Result<TokensListDetails>> GetTokensAsync(GetTokensParameters parameters = default, CancellationToken cancellationToken = default);
     }
 }

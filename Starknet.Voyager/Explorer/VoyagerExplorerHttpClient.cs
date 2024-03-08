@@ -69,7 +69,6 @@ namespace Starknet.Voyager.Explorer
         public async Task<Result<TransactionsListDetails>> GetTransactionsAsync(GetTransactionsParameters parameters = default, CancellationToken cancellationToken = default)
             => await GetResult<TransactionsListDetails>($"/txns{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
-
         #endregion
 
         #region CLASSES
@@ -81,7 +80,6 @@ namespace Starknet.Voyager.Explorer
         /// <returns>Get class detail by hash</returns>
         public async Task<Result<ClassDetails>> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken = default)
             => await GetResult<ClassDetails>($"/classes/{classHash}", cancellationToken);
-
 
         /// <summary>
         /// List classes
@@ -123,7 +121,6 @@ namespace Starknet.Voyager.Explorer
         public async Task<Result<EventsListDetails>> GetEventsAsync(GetEventsParameters parameters = default, CancellationToken cancellationToken = default)
             => await GetResult<EventsListDetails>($"/events{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
-
         #endregion
 
         #region TOKENS
@@ -133,9 +130,8 @@ namespace Starknet.Voyager.Explorer
         /// </summary>
         /// <param name="parameters">Query string parameters</param>
         /// <returns>List all deployed tokens on the network that conforms to the token standards. This includes token standards like ERC20, ERC721 and ERC1155</returns>
-        public async Task<Result<TokensListDetails>> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken = default)
+        public async Task<Result<TokensListDetails>> GetTokensAsync(GetTokensParameters parameters = default, CancellationToken cancellationToken = default)
             => await GetResult<TokensListDetails>($"/tokens{StringHelper.BuildQueryString(parameters)}", cancellationToken);
-
 
         #endregion
 

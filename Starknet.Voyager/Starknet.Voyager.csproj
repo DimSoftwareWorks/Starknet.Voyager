@@ -2,8 +2,13 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.1</TargetFramework>
-		<WarningLevel>5</WarningLevel>
-		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<AnalysisMode>All</AnalysisMode>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<PackageId>DimSoft.Starknet.Voyager</PackageId>
+		<Authors>DimSoftware</Authors>
+		<Company>DimSoftwareWorks</Company>
+		<PackageDescription>Starknet Voyager Explorer</PackageDescription>
+		<RepositoryUrl>https://github.com/DimSoftwareWorks/Starknet.Voyager</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>

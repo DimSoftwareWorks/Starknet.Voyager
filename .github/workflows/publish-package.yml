@@ -1,0 +1,40 @@
+name: Publish Package
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+        with:
+         fetch-depth: 0
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0
+        with:
+          versionSpec: '5.x'
+      - name: Determine Version
+        uses: gittools/actions/gitversion/execute@v0
+        with:
+          versionSpec: '5.x'
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --no-restore
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
+      - name: Release Build
+        run: dotnet build --configuration Release Starknet.Voyager/Starknet.Voyager.csproj
+      - name: Create the package
+        run: dotnet pack -p:Version=$GITVERSION_NUGETVERSIONV2 --configuration Release Starknet.Voyager/Starknet.Voyager.csproj
+      - name: Publish the package to nuget.org
+        run: dotnet nuget push Starknet.Voyager/bin/Release/*.nupkg

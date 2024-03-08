@@ -8,6 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B764356-F6E0-409D-85F4-2BF9A6B0D9F2}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		GitVersion.yml = GitVersion.yml
+		.github\workflows\publish-package.yml = .github\workflows\publish-package.yml
+		.github\workflows\unit-test.yml = .github\workflows\unit-test.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Starknet.Voyager.UnitTests", "Starknet.Voyager.UnitTests\Starknet.Voyager.UnitTests.csproj", "{D1C76B16-EC5C-4BE6-AC84-E357A7E155AD}"

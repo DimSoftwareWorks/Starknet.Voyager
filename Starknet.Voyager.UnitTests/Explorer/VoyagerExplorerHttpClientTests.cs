@@ -20,6 +20,8 @@ namespace Starknet.Voyager.UnitTests.Explorer
             voyagerExplorerHttpClient = testsSetupFixture.VoyagerExplorerHttpClient;
         }
 
+        #region GetBlockDetailsAsync
+
         [Fact]
         public async Task GetBlockDetailsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
         {
@@ -36,14 +38,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
             // Assert
 
-            Assert.True(result.IsSuccess);
-            Assert.Equal(200, result.StatusCode);
-            Assert.Null(result.ErrorMessage);
-            Assert.Null(result.Exception);
-            Assert.NotNull(result.Value);
-            Assert.Equal(
-                await SerializeFile<BlockDetailsExtended>(file),
-                JsonConvert.SerializeObject(result.Value));
+            await AssertSuccess(result, file);
 
             // Cleanup
 
@@ -51,7 +46,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
         }
 
         [Fact]
-        public async Task GetBlockDetailsAsync_ShouldReturnResponseWithNotFound_WhenResponseIsInvalid()
+        public async Task GetBlockDetailsAsync_ShouldReturnResponseWithNotFound_WhenResponseIsNotSuccess()
         {
             // Arrange
 
@@ -66,14 +61,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
             // Assert
 
-            Assert.False(result.IsSuccess);
-            Assert.Equal(404, result.StatusCode);
-            Assert.NotNull(result.ErrorMessage);
-            Assert.Null(result.Exception);
-            Assert.Null(result.Value);
-            Assert.Equal(
-                await SerializeFile<object>(file),
-                Serialize<object>(result.ErrorMessage));
+            await AssertError(result, file);
 
             // Cleanup
 
@@ -95,17 +83,82 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
             // Assert
 
-            Assert.False(result.IsSuccess);
-            Assert.Null(result.StatusCode);
-            Assert.Null(result.ErrorMessage);
-            Assert.NotNull(result.Exception);
-            Assert.IsType<JsonReaderException>(result.Exception);
-            Assert.Null(result.Value);
+            AssertException(result);
 
             // Cleanup
 
             Reset();
         }
+
+        #endregion
+
+        #region GetBlocksAsync
+
+        [Fact]
+        public async Task GetBlocksAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/Blocks.json";
+
+            SetupWireMockServer($"/blocks", 200, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetBlocksAsync();
+
+            // Assert
+
+            await AssertSuccess(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetBlocksAsync_ShouldReturnResponseWithNotFound_WhenResponseIsNotSuccess()
+        {
+            // Arrange
+
+            var file = "ResponseExamples/MissingAuthToken.json";
+
+            SetupWireMockServer($"/blocks", 404, await File.ReadAllTextAsync(file));
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetBlocksAsync();
+
+            // Assert
+
+            await AssertError(result, file);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        [Fact]
+        public async Task GetBlocksAsync_ShouldReturnJsonExceptionResult_WhenResponseIsInvalid()
+        {
+            // Arrange
+
+            SetupWireMockServer($"/blocks", 200, "{{");
+
+            // Act
+
+            var result = await voyagerExplorerHttpClient.GetBlocksAsync();
+
+            // Assert
+
+            AssertException(result);
+
+            // Cleanup
+
+            Reset();
+        }
+
+        #endregion
 
         private void SetupWireMockServer( string path, int code, string body)
         {
@@ -118,6 +171,43 @@ namespace Starknet.Voyager.UnitTests.Explorer
                     Response.Create()
                         .WithStatusCode(code)
                         .WithBody(body));
+        }
+
+        private async Task AssertSuccess<T>(Result<T> result, string file) 
+            where T : class
+        {
+            Assert.True(result.IsSuccess);
+            Assert.Equal(200, result.StatusCode);
+            Assert.Null(result.ErrorMessage);
+            Assert.Null(result.Exception);
+            Assert.NotNull(result.Value);
+            Assert.Equal(
+                await SerializeFile<T>(file),
+                JsonConvert.SerializeObject(result.Value));
+        }
+
+        private async Task AssertError<T>(Result<T> result, string file)
+            where T : class
+        {
+            Assert.False(result.IsSuccess);
+            Assert.Equal(404, result.StatusCode);
+            Assert.NotNull(result.ErrorMessage);
+            Assert.Null(result.Exception);
+            Assert.Null(result.Value);
+            Assert.Equal(
+                await SerializeFile<object>(file),
+                Serialize<object>(result.ErrorMessage));
+        }
+
+        private void AssertException<T>(Result<T> result)
+            where T : class
+        {
+            Assert.False(result.IsSuccess);
+            Assert.Null(result.StatusCode);
+            Assert.Null(result.ErrorMessage);
+            Assert.NotNull(result.Exception);
+            Assert.IsType<JsonReaderException>(result.Exception);
+            Assert.Null(result.Value);
         }
 
         private void Reset()

@@ -46,8 +46,8 @@ namespace Starknet.Voyager.Explorer
         /// Get all blocks
         /// </summary>
         /// <returns>A list of blocks</returns>
-        public async Task<Result<BlocksListDetails>> GetBlocksAsync(PagingParameters parameters, CancellationToken cancellationToken = default)
-            => await GetResult<BlocksListDetails>($"/blocks?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
+        public async Task<Result<BlocksListDetails>> GetBlocksAsync(PagingParameters parameters = default, CancellationToken cancellationToken = default)
+            => await GetResult<BlocksListDetails>($"/blocks{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion
 
@@ -67,7 +67,7 @@ namespace Starknet.Voyager.Explorer
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all transactions</returns>
         public async Task<Result<TransactionsListDetails>> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken = default)
-            => await GetResult<TransactionsListDetails>($"/txns?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
+            => await GetResult<TransactionsListDetails>($"/txns{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
 
         #endregion
@@ -89,7 +89,7 @@ namespace Starknet.Voyager.Explorer
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all classes</returns>
         public async Task<Result<ClassesListDetails>> GetClassesAsync(PagingParameters parameters, CancellationToken cancellationToken = default)
-            => await GetResult<ClassesListDetails>($"/classes?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
+            => await GetResult<ClassesListDetails>($"/classes{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion
 
@@ -109,7 +109,7 @@ namespace Starknet.Voyager.Explorer
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all contracts</returns>
         public async Task<Result<ContractsListDetails>> GetContractsAsync(GetContractsParameters parameters, CancellationToken cancellationToken = default)
-            => await GetResult<ContractsListDetails>($"/contracts?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
+            => await GetResult<ContractsListDetails>($"/contracts{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion
 
@@ -121,7 +121,7 @@ namespace Starknet.Voyager.Explorer
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all events</returns>
         public async Task<Result<EventsListDetails>> GetEventsAsync(GetEventsParameters parameters, CancellationToken cancellationToken = default)
-            => await GetResult<EventsListDetails>($"/events?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
+            => await GetResult<EventsListDetails>($"/events{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
 
         #endregion
@@ -134,7 +134,7 @@ namespace Starknet.Voyager.Explorer
         /// <param name="parameters">Query string parameters</param>
         /// <returns>List all deployed tokens on the network that conforms to the token standards. This includes token standards like ERC20, ERC721 and ERC1155</returns>
         public async Task<Result<TokensListDetails>> GetTokensAsync(GetTokensParameters parameters, CancellationToken cancellationToken = default)
-            => await GetResult<TokensListDetails>($"/tokens?{StringHelper.BuildQueryString(parameters)}", cancellationToken);
+            => await GetResult<TokensListDetails>($"/tokens{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
 
         #endregion

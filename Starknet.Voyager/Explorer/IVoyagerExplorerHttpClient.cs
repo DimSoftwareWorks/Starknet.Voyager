@@ -9,7 +9,7 @@ namespace Starknet.Voyager.Explorer
     {
         Task<Result<BlockDetailsExtended>> GetBlockDetailsAsync(string blockId, CancellationToken cancellationToken = default);
 
-        Task<Result<BlocksListDetails>> GetBlocksAsync(PagingParameters parameters, CancellationToken cancellationToken = default);
+        Task<Result<BlocksListDetails>> GetBlocksAsync(PagingParameters parameters = default, CancellationToken cancellationToken = default);
 
         Task<Result<TransactionDetails>> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken = default);
 

@@ -23,6 +23,7 @@ namespace Starknet.Voyager.UnitTests.Helpers
             // Assert
 
             Assert.NotNull(actual);
+            Assert.Contains("?", actual);
             Assert.Contains($"contract={parameters.Contract}", actual);
             Assert.Contains($"txnHash={parameters.TxnHash}", actual);
             Assert.Contains($"blockHash={parameters.BlockHash}", actual);
@@ -33,7 +34,7 @@ namespace Starknet.Voyager.UnitTests.Helpers
             var numberOfParameters = parameters.GetType().GetProperties().Length;
             Assert.Equal(numberOfParameters - 1, numberOfAmpersands);
 
-            Assert.Equal($"contract={parameters.Contract}&" +
+            Assert.Equal($"?contract={parameters.Contract}&" +
                 $"txnHash={parameters.TxnHash}&" +
                 $"blockHash={parameters.BlockHash}&" +
                 $"ps={parameters.PageSize}&" +
@@ -56,6 +57,7 @@ namespace Starknet.Voyager.UnitTests.Helpers
             // Assert
 
             Assert.NotNull(actual);
+            Assert.Contains("?", actual);
             Assert.Contains($"contract={parameters.Contract}", actual);
             Assert.DoesNotContain($"txnHash={parameters.TxnHash}", actual);
             Assert.Contains($"blockHash={parameters.BlockHash}", actual);
@@ -66,7 +68,7 @@ namespace Starknet.Voyager.UnitTests.Helpers
             var numberOfParameters = parameters.GetType().GetProperties().Count(p => p.GetValue(parameters) != null);
             Assert.Equal(numberOfParameters - 1, numberOfAmpersands);
 
-            Assert.Equal($"contract={parameters.Contract}&" +
+            Assert.Equal($"?contract={parameters.Contract}&" +
                 $"blockHash={parameters.BlockHash}&" +
                 $"p={parameters.Page}", actual);
         }
@@ -85,6 +87,7 @@ namespace Starknet.Voyager.UnitTests.Helpers
             // Assert
 
             Assert.NotNull(actual);
+            Assert.Contains("?", actual);
             Assert.Contains($"attribute={parameters.Attribute.GetEnumMemberValue()}", actual);
             Assert.Contains($"type={parameters.Type.GetEnumMemberValue()}", actual);
             Assert.Contains($"ps={parameters.PageSize}", actual);
@@ -94,10 +97,42 @@ namespace Starknet.Voyager.UnitTests.Helpers
             var numberOfParameters = parameters.GetType().GetProperties().Length;
             Assert.Equal(numberOfParameters - 1, numberOfAmpersands);
 
-            Assert.Equal($"attribute={parameters.Attribute.GetEnumMemberValue()}&" +
+            Assert.Equal($"?attribute={parameters.Attribute.GetEnumMemberValue()}&" +
                 $"type={parameters.Type.GetEnumMemberValue()}&" +
                 $"ps={parameters.PageSize}&" +
                 $"p={parameters.Page}", actual);
+        }
+
+        [Fact]
+        public void BuildQueryString_ShouldReturnEmptyString_WhenPropertiesAreNull()
+        {
+            // Arrange
+
+            var parameters = new GetEventsParameters();
+
+            // Act
+
+            var actual = StringHelper.BuildQueryString(parameters);
+
+            // Assert
+
+            Assert.NotNull(actual);
+            Assert.Empty(actual);
+        }
+
+        [Fact]
+        public void BuildQueryString_ShouldReturnEmptyString_WhenPropertiesObjectIsNull()
+        {
+            // Arrange
+
+            // Act
+
+            var actual = StringHelper.BuildQueryString(null);
+
+            // Assert
+
+            Assert.NotNull(actual);
+            Assert.Empty(actual);
         }
     }
 }

@@ -16,6 +16,11 @@ namespace Starknet.Voyager.Helpers
         {
             var queryString = new StringBuilder();
 
+            if (parameters == null)
+            {
+                return string.Empty;
+            }
+
             foreach (var property in parameters.GetType().GetProperties())
             {
                 var value = property.GetValue(parameters);
@@ -42,6 +47,11 @@ namespace Starknet.Voyager.Helpers
                         queryString.Append($"{name}={value}&");
                     }
                 }
+            }
+
+            if (queryString.Length > 0) 
+            {
+                queryString.Insert(0, '?');
             }
 
             return queryString.ToString().TrimEnd('&');

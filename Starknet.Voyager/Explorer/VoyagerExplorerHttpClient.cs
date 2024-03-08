@@ -108,7 +108,7 @@ namespace Starknet.Voyager.Explorer
         /// </summary>
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all contracts</returns>
-        public async Task<Result<ContractsListDetails>> GetContractsAsync(GetContractsParameters parameters, CancellationToken cancellationToken = default)
+        public async Task<Result<ContractsListDetails>> GetContractsAsync(GetContractsParameters parameters = default, CancellationToken cancellationToken = default)
             => await GetResult<ContractsListDetails>($"/contracts{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
         #endregion

@@ -66,7 +66,7 @@ namespace Starknet.Voyager.Explorer
         /// </summary>
         /// <param name="parameters">Query string parameters</param>
         /// <returns>Get all transactions</returns>
-        public async Task<Result<TransactionsListDetails>> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken = default)
+        public async Task<Result<TransactionsListDetails>> GetTransactionsAsync(GetTransactionsParameters parameters = default, CancellationToken cancellationToken = default)
             => await GetResult<TransactionsListDetails>($"/txns{StringHelper.BuildQueryString(parameters)}", cancellationToken);
 
 

@@ -13,7 +13,7 @@ namespace Starknet.Voyager.Explorer
 
         Task<Result<TransactionDetails>> GetTransactionDetailsAsync(string txnHash, CancellationToken cancellationToken = default);
 
-        Task<Result<TransactionsListDetails>> GetTransactionsAsync(GetTransactionsParameters parameters, CancellationToken cancellationToken = default);
+        Task<Result<TransactionsListDetails>> GetTransactionsAsync(GetTransactionsParameters parameters = default, CancellationToken cancellationToken = default);
 
         Task<Result<ClassDetails>> GetClassDetailsAsync(string classHash, CancellationToken cancellationToken = default);
 

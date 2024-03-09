@@ -39,16 +39,16 @@
 	  <None Update="ResponseExamples\BlockNotFound.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="ResponseExamples\Blocks&amp;ps=10.json">
+	  <None Update="ResponseExamples\Blocks-4.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="ResponseExamples\Blocks&amp;p=1.json">
+	  <None Update="ResponseExamples\Blocks-3.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="ResponseExamples\Blocks&amp;ps=10&amp;p=1.json">
+	  <None Update="ResponseExamples\Blocks-2.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="ResponseExamples\Blocks.json">
+	  <None Update="ResponseExamples\Blocks-1.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="ResponseExamples\ClassDetails.json">

@@ -96,14 +96,14 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #region GetBlocksAsync
 
-        //test attribute for inline data
-
-
         [Theory]
-        [InlineData("ResponseExamples/Blocks.json", null, null)]
-        [InlineData("ResponseExamples/Blocks&ps=10&p=1.json", 10, 1)]
-        [InlineData("ResponseExamples/Blocks&p=1.json", null, 1)]
-        [InlineData("ResponseExamples/Blocks&ps=10.json", 10, null)]
+        [InlineData("ResponseExamples/Blocks-1.json", null, null)]
+        //ps=10&p=1
+        [InlineData("ResponseExamples/Blocks-2.json", 10, 1)]
+        //p=1
+        [InlineData("ResponseExamples/Blocks-3.json", null, 1)]
+        //ps=10
+        [InlineData("ResponseExamples/Blocks-4.json", 10, null)]
         public async Task GetBlocksAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(string file, int? pageSize, int? page)
         {
             // Arrange
@@ -249,12 +249,11 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #region GetTransactionsAsync
 
-        [Fact]
-        public async Task GetTransactionsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        [Theory]
+        [InlineData("ResponseExamples/Transactions.json")]
+        public async Task GetTransactionsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(string file)
         {
             // Arrange
-
-            var file = "ResponseExamples/Transactions.json";
 
             SetupWireMockServer($"/txns", 200, await File.ReadAllTextAsync(file));
 

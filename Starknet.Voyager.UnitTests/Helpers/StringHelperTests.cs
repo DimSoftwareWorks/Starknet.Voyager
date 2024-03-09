@@ -116,7 +116,6 @@ namespace Starknet.Voyager.UnitTests.Helpers
 
             // Assert
 
-            Assert.NotNull(actual);
             Assert.Empty(actual);
         }
 
@@ -131,7 +130,6 @@ namespace Starknet.Voyager.UnitTests.Helpers
 
             // Assert
 
-            Assert.NotNull(actual);
             Assert.Empty(actual);
         }
     }

@@ -75,7 +75,13 @@
 	  <None Update="ResponseExamples\TransactionDetails.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="ResponseExamples\Transactions.json">
+	  <None Update="ResponseExamples\Transactions-3.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ResponseExamples\Transactions-2.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ResponseExamples\Transactions-1.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>

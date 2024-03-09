@@ -15,10 +15,10 @@ namespace Starknet.Voyager.Explorer.Parameters
         /// Block number to query for
         /// </summary>
         [QueryStringName("block")]
-        public int Block { get; set; }
+        public int? Block { get; set; }
 
         [QueryStringName("type")]
-        public TransactionDetailsType Type { get; set; }
+        public TransactionDetailsType? Type { get; set; }
 
         /// <summary>
         /// If true, then only rejected transactions will be retrieved. Otherwise, only transactions which haven't been rejected will be retrieved.

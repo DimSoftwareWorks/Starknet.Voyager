@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Starknet.Voyager.Explorer;
+using Starknet.Voyager.Explorer.Enumerations;
 using Starknet.Voyager.Explorer.Models;
 using Starknet.Voyager.Explorer.Parameters;
 using Starknet.Voyager.Helpers;
@@ -98,11 +99,8 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         [Theory]
         [InlineData("ResponseExamples/Blocks-1.json", null, null)]
-        //ps=10&p=1
         [InlineData("ResponseExamples/Blocks-2.json", 10, 1)]
-        //p=1
         [InlineData("ResponseExamples/Blocks-3.json", null, 1)]
-        //ps=10
         [InlineData("ResponseExamples/Blocks-4.json", 10, null)]
         public async Task GetBlocksAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(string file, int? pageSize, int? page)
         {
@@ -250,16 +248,35 @@ namespace Starknet.Voyager.UnitTests.Explorer
         #region GetTransactionsAsync
 
         [Theory]
-        [InlineData("ResponseExamples/Transactions.json")]
-        public async Task GetTransactionsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(string file)
+        [InlineData("ResponseExamples/Transactions-1.json", null, null, null, false, null, null)]
+        [InlineData("ResponseExamples/Transactions-2.json", "0x025b74DBFB6AEc63a080b2477e03a4920FbD89C3ba6AdAB7cea1Afd25F8685F9", 10221, TransactionDetailsType.Deploy, false, 10, 1)]
+        [InlineData("ResponseExamples/Transactions-3.json", "0x025b74DBFB6AEc63a080b2477e03a4920FbD89C3ba6AdAB7cea1Afd25F8685F9", null, null, false, 5, 1)]
+        public async Task GetTransactionsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(
+            string file, 
+            string? to, 
+            int? block, 
+            TransactionDetailsType? type, 
+            bool rejected, 
+            int? pageSize, 
+            int? page)
         {
             // Arrange
 
-            SetupWireMockServer($"/txns", 200, await File.ReadAllTextAsync(file));
+            var parameters = new GetTransactionsParameters
+            {
+                To = to,
+                Block = block,
+                Type = type,
+                Rejected = rejected,
+                PageSize = pageSize,
+                Page = page
+            };
+
+            SetupWireMockServer("/txns", 200, await File.ReadAllTextAsync(file), DictionaryHelpers.GetQueryStringDictionary(parameters));
 
             // Act
 
-            var result = await voyagerExplorerHttpClient.GetTransactionsAsync();
+            var result = await voyagerExplorerHttpClient.GetTransactionsAsync(parameters);
 
             // Assert
 

@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using Starknet.Voyager.Explorer;
 using Starknet.Voyager.Explorer.Models;
+using Starknet.Voyager.Explorer.Parameters;
+using Starknet.Voyager.Helpers;
 using Starknet.Voyager.UnitTests.Setup;
 using WireMock.RequestBuilders;
 using WireMock.ResponseBuilders;
@@ -94,18 +96,29 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #region GetBlocksAsync
 
-        [Fact]
-        public async Task GetBlocksAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        //test attribute for inline data
+
+
+        [Theory]
+        [InlineData("ResponseExamples/Blocks.json", null, null)]
+        [InlineData("ResponseExamples/Blocks&ps=10&p=1.json", 10, 1)]
+        [InlineData("ResponseExamples/Blocks&p=1.json", null, 1)]
+        [InlineData("ResponseExamples/Blocks&ps=10.json", 10, null)]
+        public async Task GetBlocksAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(string file, int? pageSize, int? page)
         {
             // Arrange
 
-            var file = "ResponseExamples/Blocks.json";
+            var parameters = new PagingParameters
+            {
+                PageSize = pageSize,
+                Page = page
+            };
 
-            SetupWireMockServer($"/blocks", 200, await File.ReadAllTextAsync(file));
+            SetupWireMockServer("/blocks", 200, await File.ReadAllTextAsync(file), DictionaryHelpers.GetQueryStringDictionary(parameters));
 
             // Act
 
-            var result = await voyagerExplorerHttpClient.GetBlocksAsync();
+            var result = await voyagerExplorerHttpClient.GetBlocksAsync(parameters);
 
             // Assert
 
@@ -115,7 +128,7 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
             Reset();
         }
-
+        
         [Fact]
         public async Task GetBlocksAsync_ShouldReturnResponseWithNotFound_WhenResponseIsNotSuccess()
         {
@@ -722,17 +735,27 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #region Support
 
-        private void SetupWireMockServer(string path, int code, string body)
+        private void SetupWireMockServer(string path, int code, string body, IDictionary<string, string>? parameters = default)
         {
+            var request = Request.Create()
+                .WithPath(path)
+                .UsingGet();
+
+            if (parameters != null && parameters.Any())
+            {
+                foreach (var parameter in parameters)
+                {
+                    request.WithParam(parameter.Key, parameter.Value);
+                }
+            }
+
+            var response = Response.Create()
+                .WithStatusCode(code)
+                .WithBody(body);
+
             wireMockServer
-                .Given(
-                    Request.Create()
-                        .WithPath(path)
-                        .UsingGet())
-                .RespondWith(
-                    Response.Create()
-                        .WithStatusCode(code)
-                        .WithBody(body));
+                .Given(request)
+                .RespondWith(response);
         }
 
         private async Task AssertSuccess<T>(Result<T> result, string file)

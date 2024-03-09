@@ -1,0 +1,255 @@
+{
+  "items": [
+    {
+      "hash": "0x75c6d0b64c180488b0487df1c10415e0dd72aa7b34938f69da8e340c2123fef",
+      "timestamp": 1709994993,
+      "stateRoot": "0x7b4d1cd723595458945f27c7a91cd9d261f46a580b059546fff37c3a49260d",
+      "txnCount": 31,
+      "eventCount": 232,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x74e4bf70cbbc5ef2701100177ff7e4e3abc9348cbfa1d548609ca38c36c5872",
+      "timestamp": 1709994908,
+      "stateRoot": "0xff2ed1a23fdf17f5101ecb92e4caf7d2821c1402baaec3f0afeb83e5d266c3",
+      "txnCount": 69,
+      "eventCount": 412,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x5e32a4ff1331430a67b57013838dc1d6519e0ac507851558d3da64e8b2d526d",
+      "timestamp": 1709994870,
+      "stateRoot": "0x3f5525bf6f4112f0d7976d2644354f35ff268929c63a9ae6f0c8c39ec3de48d",
+      "txnCount": 343,
+      "eventCount": 1111,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x69e006b0d79de6b34aeb38fd6dde05b386c1dc099738dfb512444f84b326a42",
+      "timestamp": 1709994806,
+      "stateRoot": "0x731fa3dfe81e42563b69b0493f5f6068bc611b32abca3596a0f7b845110262b",
+      "txnCount": 48,
+      "eventCount": 435,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x52538939da89132ffe58e47d0bf1f8346ca4796ca10b7301bffe1d8acd937d3",
+      "timestamp": 1709994746,
+      "stateRoot": "0x673702cd07c775d2567a77469a5a66f2890c15bafee771cff5035b0d0704741",
+      "txnCount": 63,
+      "eventCount": 371,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x268459c2025d30de830c8051f30a959b89f88852edf33571ed6deb02e1c3004",
+      "timestamp": 1709994671,
+      "stateRoot": "0x762aeafeceb2a41faad10a8bf50e946981926c6572408811472532ac59c451f",
+      "txnCount": 78,
+      "eventCount": 492,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x3708bd9da2f1cd3a4b69ffd3c3b4f0e74ddf69fa1e3c0764b5c178255a74983",
+      "timestamp": 1709994610,
+      "stateRoot": "0x532f628449ab55165d6c33bef185170b3340a529d5957b4d305e353e875aa85",
+      "txnCount": 123,
+      "eventCount": 498,
+      "messageCount": 1,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x6d1423e01281294dedd854b992cb23ed0b1ee8c4b8dff888409fc717c894bc2",
+      "timestamp": 1709994510,
+      "stateRoot": "0x732a006b610f011f2590b817aa5f0856a6a1fb1e967e2d1de0532b9a1cdf63d",
+      "txnCount": 373,
+      "eventCount": 1259,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x1533e63570266a69e6d7249dceffff95cc858e7d9bd5ea4e7ef00d6ed0d01cd",
+      "timestamp": 1709994444,
+      "stateRoot": "0x29b73ffb3b47a2c8203a1ef08299988430275f7093b41934c66257e2cb4118a",
+      "txnCount": 91,
+      "eventCount": 406,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x6e8b8af750d90e248e77d6586ccfb4eca2211987932a3be127449dc248aa46a",
+      "timestamp": 1709994336,
+      "stateRoot": "0x4cb33667652557d422d893cb2549b21c9b929cb14191db0cf3bb0cd7470b081",
+      "txnCount": 183,
+      "eventCount": 817,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x44c8c9bea635e02dbc18704693158d80e1d21cb1f16baf88facc46fd72bbdb0",
+      "timestamp": 1709994320,
+      "stateRoot": "0xa1bbe37433178282ac85f678c87878f3ab4ab45df47bf7a880efbf6e74f13a",
+      "txnCount": 15,
+      "eventCount": 99,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0xa4541501cca299b4e6043e5f52e8a82d6989f6a0fdb2d67b5d17944c621796",
+      "timestamp": 1709994317,
+      "stateRoot": "0x22c5d69232dc25a81ce5e8d7294debb674e6e416ae973d2079fbeb0df18d897",
+      "txnCount": 11,
+      "eventCount": 74,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x5bb3a081df27a2ed7e2ef31d0802b7b6a92a8df19c936a18f7e90e7b9788841",
+      "timestamp": 1709994263,
+      "stateRoot": "0x7dbf4cb76d5732fd106d14db7c07cfb06270587f665aa30e2e687cf8533f7e2",
+      "txnCount": 368,
+      "eventCount": 1137,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x7dffd3a6624afabb825bf36acbc6df590fda28d08fa23c128b3724c439971f6",
+      "timestamp": 1709994182,
+      "stateRoot": "0x4b517b52850cdb06e06df16d206a416201758026973d86d55712c69d432c56a",
+      "txnCount": 62,
+      "eventCount": 335,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x3151bab5082ba49c32cacd409abf5209e7527aa3556de561703b8170fca2d28",
+      "timestamp": 1709994094,
+      "stateRoot": "0x2f4f5a5d155d55f18215d680140ae2b9cda8c358a9bee75282c0ac47c1dc599",
+      "txnCount": 71,
+      "eventCount": 485,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x31704980fd30c7a2a58d53de45341e28cb3413691b60acb56816e7ce3e0d70d",
+      "timestamp": 1709994048,
+      "stateRoot": "0x149752a63b50121b1a446e97b9d7621876be0e03a4599efb386d2ccf9f4c256",
+      "txnCount": 57,
+      "eventCount": 455,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x10eaaec80cc1a0b66bd21fce61bb3d9e9e529725bba9937e6bf87e6d49bf387",
+      "timestamp": 1709994008,
+      "stateRoot": "0x7144425f2170e947e8eaaa6a0efbd3f9f41382d55649a03291dde493b84bfb1",
+      "txnCount": 87,
+      "eventCount": 361,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x6b710ab15be546eb988d896549806bf73cbcc7a1fb64b910cc9210269b87254",
+      "timestamp": 1709993958,
+      "stateRoot": "0x454eca97f61c4e1620d4552c87b6c4eca7fbaea4f12be3142224012b86d7d42",
+      "txnCount": 336,
+      "eventCount": 1049,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x7ddfd51162b9efe72e9816e9974925ef3224349138b84e57371e64f1d033062",
+      "timestamp": 1709993904,
+      "stateRoot": "0x61eada4ac1c146bcd9851b5704e702e40a000551eee023d78250867b51efd77",
+      "txnCount": 52,
+      "eventCount": 312,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x7837a51b90c37dace8f25d7fcabe0a0f40470a5b49fc8b61028aac8b30b3420",
+      "timestamp": 1709993877,
+      "stateRoot": "0x50518b753dcb90c85abac4f8970da37dca9921446caa0bc6714a0c61439666",
+      "txnCount": 28,
+      "eventCount": 165,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x184268a634491e389b1cb08d53bf63ea00e41e740226b6b5d15ebfcebc28073",
+      "timestamp": 1709993827,
+      "stateRoot": "0x67bf8be4c0e32b9e0d758e2ea6c6942c7911df0234b8194ae95363472a6571",
+      "txnCount": 65,
+      "eventCount": 418,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x5073c235021612aa031049c504f8de4ffdc44a625e42b015c6189d7b25eba33",
+      "timestamp": 1709993772,
+      "stateRoot": "0x49cf6979ab459e92763ecffa3abff7d476f62194a787bf6e36302ed0a9c953",
+      "txnCount": 43,
+      "eventCount": 283,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x668acd753a3af9145c64bad8247d774df96ff871de53cc6ec3e021db42c9d5f",
+      "timestamp": 1709993694,
+      "stateRoot": "0x3c49845767034ca0d5b10cc1c699053e2050a82dea652f7f2367af85e802c21",
+      "txnCount": 243,
+      "eventCount": 882,
+      "messageCount": 1,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x1f695542e550c2303c9ce51fd20ca44403aa5e9df743a5a324a61da55d521ba",
+      "timestamp": 1709993617,
+      "stateRoot": "0x62847f5bbdf21d793a724222ec63fa20e6c1683ba4009de352800155e75f239",
+      "txnCount": 215,
+      "eventCount": 752,
+      "messageCount": 0,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    },
+    {
+      "hash": "0x3510e7aa30f37c3c2f5a069ad368999ac7a75aa6451965f4abf4c6eb9673fd4",
+      "timestamp": 1709993581,
+      "stateRoot": "0x5cd4a22a8a43c1f32be9f393c41cf23c96eb0dd13b6b7deb12cc3d76bd0061a",
+      "txnCount": 41,
+      "eventCount": 240,
+      "messageCount": 1,
+      "l1VerificationTxHash": null,
+      "status": "Accepted on L2"
+    }
+  ],
+  "lastPage": 24196
+}

@@ -1,19 +1,19 @@
 ﻿using Starknet.Voyager.Attributes;
 using Starknet.Voyager.Extensions;
+using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 namespace Starknet.Voyager.Helpers
 {
-    internal static class StringHelper
+    internal static class DictionaryHelpers
     {
-        public static string BuildQueryString(object parameters)
+        public static IDictionary<string, string> GetQueryStringDictionary(object parameters)
         {
-            var queryString = new StringBuilder();
+            var dictionary = new Dictionary<string, string>();
 
             if (parameters == null)
             {
-                return string.Empty;
+                return dictionary;
             }
 
             foreach (var property in parameters.GetType().GetProperties())
@@ -33,21 +33,16 @@ namespace Starknet.Voyager.Helpers
 
                     if (property.PropertyType.IsEnum)
                     {
-                        queryString.Append($"{name}={value.GetEnumMemberValue()}&");
+                        dictionary.Add(name, value.GetEnumMemberValue());
                     }
                     else
                     {
-                        queryString.Append($"{name}={value}&");
+                        dictionary.Add(name, value.ToString()!);
                     }
                 }
             }
 
-            if (queryString.Length > 0) 
-            {
-                queryString.Insert(0, '?');
-            }
-
-            return queryString.ToString().TrimEnd('&');
+            return dictionary;
         }
     }
 }

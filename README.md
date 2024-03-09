@@ -2,6 +2,8 @@
 
 **Starknet Voyager Explorer Http Client**
 
+Based on Voyager API 0.1.0
+
 <hr />
 
 This is a .NET Http Client wrapper for the Starknet Voyager Explorer: https://voyager.online/

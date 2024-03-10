@@ -25,11 +25,12 @@ jobs:
       - name: Test
         run: dotnet test --no-build --verbosity normal
       - uses: dotnet/nbgv@master
-        id: nbgv
+        with:
+          setAllVars: true
       - name:  Publish package to nuget.org
         id: publish_nuget
         uses: alirezanet/publish-nuget@v3.1.0
         with:
           PROJECT_FILE_PATH: Starknet.Voyager/Starknet.Voyager.csproj
-          NUGET_KEY: ${{ steps.nbgv.outputs.NuGetPackageVersion }}
-          VERSION_STATIC: $GITVERSION_NUGETVERSIONV2
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          VERSION_STATIC: $NBGV_NuGetPackageVersion

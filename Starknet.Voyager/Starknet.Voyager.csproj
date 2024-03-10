@@ -27,4 +27,8 @@
 		</AssemblyAttribute>
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="../voyager.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
 </Project>

@@ -1,0 +1,255 @@
+{
+  "items": [
+    {
+      "address": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "decimals": "18",
+      "holders": "4176449",
+      "name": "Ether",
+      "symbol": "ETH",
+      "transfers": "160676115",
+      "totalSupply": 45542.78700208405,
+      "type": "erc20"
+    },
+    {
+      "address": "0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8",
+      "decimals": "6",
+      "holders": "1419237",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "transfers": "33211063",
+      "totalSupply": 41187615.892557,
+      "type": "erc20"
+    },
+    {
+      "address": "0x068f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8",
+      "decimals": "6",
+      "holders": "651595",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "transfers": "12585427",
+      "totalSupply": 7665980.284857,
+      "type": "erc20"
+    },
+    {
+      "address": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "decimals": "18",
+      "holders": "634445",
+      "name": "Starknet Token",
+      "symbol": "STRK",
+      "transfers": "3011272",
+      "totalSupply": 573517338.3157432,
+      "type": "erc20"
+    },
+    {
+      "address": "0x00da114221cb83fa859dbdb4c44beeaa0bb37c7537ad5ae66fe5e0efd20e6eb3",
+      "decimals": "18",
+      "holders": "465184",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "transfers": "7369868",
+      "totalSupply": 1523492.6283856104,
+      "type": "erc20"
+    },
+    {
+      "address": "0x01b5bd713e72fdc5d63ffd83762f81297f6175a5e0a4771cdadbc1dd5fe72cb1",
+      "decimals": "18",
+      "holders": "407676",
+      "name": "zkLend Interest-Bearing ETH",
+      "symbol": "zETH",
+      "transfers": "4329312",
+      "totalSupply": 3027.1507331824405,
+      "type": "erc20"
+    },
+    {
+      "address": "0x06a05844a03bb9e744479e3298f54705a35966ab04140d3d8dd797c1f6dc49d0",
+      "decimals": "0",
+      "holders": "216720",
+      "name": "Game of Life Token",
+      "symbol": "GOL",
+      "transfers": "718673",
+      "totalSupply": 311990,
+      "type": "erc20"
+    },
+    {
+      "address": "0x000023c72abdf49dffc85ae3ede714f2168ad384cc67d08524732acea90df325",
+      "decimals": "18",
+      "holders": "186985",
+      "name": "10kSwap Pair Token",
+      "symbol": "LPT",
+      "transfers": "1536715",
+      "totalSupply": 0.008273260280128331,
+      "type": "erc20"
+    },
+    {
+      "address": "0x04d0390b777b424e43839cd1e744799f3de6c176c7e32c1812a41dbd9c19db6a",
+      "decimals": "18",
+      "holders": "186660",
+      "name": "JediSwap Pair",
+      "symbol": "JEDI-P",
+      "transfers": "1185568",
+      "totalSupply": 0.014105096561229415,
+      "type": "erc20"
+    },
+    {
+      "address": "0x022b05f9396d2c48183f6deaf138a57522bcc8b35b67dee919f76403d1783136",
+      "decimals": "12",
+      "holders": "173303",
+      "name": "MYSWAP ETH/USDC",
+      "symbol": "MYLP",
+      "transfers": "891179",
+      "totalSupply": 5566.094974422891,
+      "type": "erc20"
+    },
+    {
+      "address": "0x03fe2b97c1fd336e750087d68b9b867997fd64a2661ff3ca5a7c771641e8e7ac",
+      "decimals": "8",
+      "holders": "144452",
+      "name": "Wrapped BTC",
+      "symbol": "WBTC",
+      "transfers": "1564846",
+      "totalSupply": 68.64460151,
+      "type": "erc20"
+    },
+    {
+      "address": "0x057146f6409deb4c9fa12866915dd952aa07c1eb2752e451d7f3b042086bdeb8",
+      "decimals": "18",
+      "holders": "115533",
+      "name": "Nostra ETH Interest Collat.",
+      "symbol": "iETH-c",
+      "transfers": "246189",
+      "totalSupply": 9108.422218484178,
+      "type": "erc20"
+    },
+    {
+      "address": "0x047ad51726d891f972e74e4ad858a261b43869f7126ce7436ee0b2529a98f486",
+      "decimals": "6",
+      "holders": "110024",
+      "name": "zkLend Interest-Bearing USDC",
+      "symbol": "zUSDC",
+      "transfers": "950823",
+      "totalSupply": 1877984.404515,
+      "type": "erc20"
+    },
+    {
+      "address": "0x0030c42f4c0a094ea1eda7e3086056a225a464c43dd7da48bd2083fc3114a4db",
+      "decimals": "18",
+      "holders": "93606",
+      "name": "Stark Rocket",
+      "symbol": "STRKR",
+      "transfers": "220646",
+      "totalSupply": 100000000,
+      "type": "erc20"
+    },
+    {
+      "address": "0x042b8f0484674ca266ac5d08e4ac6a3fe65bd3129795def2dca5c34ecc5f96d2",
+      "decimals": "18",
+      "holders": "90959",
+      "name": "Starknet Wrapped Staked Ether",
+      "symbol": "wstETH",
+      "transfers": "1176039",
+      "totalSupply": 1021.9909788044022,
+      "type": "erc20"
+    },
+    {
+      "address": "0x0124aeb495b947201f5fac96fd1138e326ad86195b98df6dec9009158a533b49",
+      "decimals": "18",
+      "holders": "89086",
+      "name": "Lords",
+      "symbol": "LORDS",
+      "transfers": "716832",
+      "totalSupply": 23341646.605412785,
+      "type": "erc20"
+    },
+    {
+      "address": "0x045e7131d776dddc137e30bdd490b431c7144677e97bf9369f629ed8d3fb7dd6",
+      "decimals": "18",
+      "holders": "48156",
+      "name": "JediSwap Pair",
+      "symbol": "JEDI-P",
+      "transfers": "285386",
+      "totalSupply": 0.002679252769348423,
+      "type": "erc20"
+    },
+    {
+      "address": "0x05dcd26c25d9d8fd9fc860038dcb6e4d835e524eb8a85213a8cda5b7fff845f6",
+      "decimals": "6",
+      "holders": "46206",
+      "name": "Nostra USDC Interest Collat.",
+      "symbol": "iUSDC-c",
+      "transfers": "90146",
+      "totalSupply": 3716420.968253,
+      "type": "erc20"
+    },
+    {
+      "address": "0x041f9a1e9a4d924273f5a5c0c138d52d66d2e6a8bee17412c6b0f48fe059ae04",
+      "decimals": "12",
+      "holders": "45311",
+      "name": "MYSWAP ETH/USDT",
+      "symbol": "MYLP",
+      "transfers": "229780",
+      "totalSupply": 1336.159011184382,
+      "type": "erc20"
+    },
+    {
+      "address": "0x05900cfa2b50d53b097cb305d54e249e31f24f881885aae5639b0cd6af4ed298",
+      "decimals": "18",
+      "holders": "44894",
+      "name": "10kSwap Pair Token",
+      "symbol": "LPT",
+      "transfers": "353326",
+      "totalSupply": 0.001878680058736759,
+      "type": "erc20"
+    },
+    {
+      "address": "0x0782f0ddca11d9950bc3220e35ac82cf868778edb67a5e58b39838544bc4cd0f",
+      "decimals": "18",
+      "holders": "43845",
+      "name": "Starknet Voting Token",
+      "symbol": "vSTRK",
+      "transfers": "53878",
+      "totalSupply": 11342858.804945491,
+      "type": "erc20"
+    },
+    {
+      "address": "0x06182278e63816ff4080ed07d668f991df6773fd13db0ea10971096033411b11",
+      "decimals": "18",
+      "holders": "40716",
+      "name": "Spirit Stone",
+      "symbol": "SPIST",
+      "transfers": "477277",
+      "totalSupply": 4331600000,
+      "type": "erc20"
+    },
+    {
+      "address": "0x00811d8da5dc8a2206ea7fd0b28627c2d77280a515126e62baa4d78e22714c4a",
+      "decimals": "6",
+      "holders": "39598",
+      "name": "zkLend Interest-Bearing USDT",
+      "symbol": "zUSDT",
+      "transfers": "415062",
+      "totalSupply": 573378.963912,
+      "type": "erc20"
+    },
+    {
+      "address": "0x029959a546dda754dc823a7b8aa65862c5825faeaaf7938741d8ca6bfdc69e4e",
+      "decimals": "6",
+      "holders": "38602",
+      "name": "Nostra IBC USD Coin",
+      "symbol": "iUSDC-c",
+      "transfers": "76074",
+      "totalSupply": 40704.277253,
+      "type": "erc20"
+    },
+    {
+      "address": "0x030615bec9c1506bfac97d9dbd3c546307987d467a7f95d5533c2e861eb81f3f",
+      "decimals": "18",
+      "holders": "37645",
+      "name": "SS_V1_VLP #2",
+      "symbol": "ssVLP-ETH/USDC",
+      "transfers": "184317",
+      "totalSupply": 0.002057814825667438,
+      "type": "erc20"
+    }
+  ],
+  "lastPage": 2532
+}

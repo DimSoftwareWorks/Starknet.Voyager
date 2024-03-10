@@ -1,0 +1,255 @@
+{
+  "items": [
+    {
+      "address": "0x046bfa580e4fa55a38eaa7f51a3469f86b336eed59a6136a07b7adcd095b0eb2",
+      "decimals": "",
+      "holders": "164831",
+      "name": "",
+      "symbol": "",
+      "transfers": "214227",
+      "totalSupply": "165883",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x05b456031650c1de9eec123d3e7d06a684d321a346d4a7cac9fd86c2b77cf70f",
+      "decimals": "",
+      "holders": "23251",
+      "name": "",
+      "symbol": "",
+      "transfers": "20791",
+      "totalSupply": "19866",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x076d4aa535b66f9845c47d71004a5d34466c557ce9830395a89077bc2d372c97",
+      "decimals": "",
+      "holders": "8506",
+      "name": "ZKX Clans",
+      "symbol": "ZKX-CLANS",
+      "transfers": "8506",
+      "totalSupply": "8506",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x072eb698039797e6a862e2b1dbf29017ec264bfc506480dacc1057354cf3679f",
+      "decimals": "",
+      "holders": "2673",
+      "name": "ZKX OG Badges",
+      "symbol": "OGBadges",
+      "transfers": "5944",
+      "totalSupply": "24591",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x0372ed7c5e187c84994a804d343adb70d3394a9269d398d04e6991e8c6cd7939",
+      "decimals": "",
+      "holders": "2317",
+      "name": "Carbonable Badges",
+      "symbol": "",
+      "transfers": "2317",
+      "totalSupply": "2317",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x007c1e5cf49ba2e05dde3947e555215c73da8004fa6c3b4e0a23741c4bdc44dd",
+      "decimals": "",
+      "holders": "1783",
+      "name": "",
+      "symbol": "",
+      "transfers": "1783",
+      "totalSupply": "1783",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x0209b1620290ae30b9734a4e20aa044c9b03e01cdd7ce12b056c6f771ea2c15b",
+      "decimals": "",
+      "holders": "13",
+      "name": "",
+      "symbol": "",
+      "transfers": "14",
+      "totalSupply": "400",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x04310198758a4849cd7578c2401308b228df29cc5ab6be1d6193a18f1a2f2c5c",
+      "decimals": "",
+      "holders": "5",
+      "name": "",
+      "symbol": "",
+      "transfers": "19",
+      "totalSupply": "16333553612205046246241981156724874154952",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x05edbd656b4b6fe53808d39cc00e65b72d5c300d1bb31cbcb64802449ba97e00",
+      "decimals": "",
+      "holders": "2",
+      "name": "",
+      "symbol": "",
+      "transfers": "5",
+      "totalSupply": "2",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x026ebdfa6bfe26d78507bb82feedb8a816457a082876df4fd5b7c6b5a115b927",
+      "decimals": "",
+      "holders": "2",
+      "name": "",
+      "symbol": "",
+      "transfers": "7",
+      "totalSupply": "100",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x0122a48ed9384ba2b2888d2ca8b254fcb7e7e818d6ffce7eec34790ca605aee4",
+      "decimals": "",
+      "holders": "2",
+      "name": "",
+      "symbol": "",
+      "transfers": "20",
+      "totalSupply": "680564733841876926926749214863552118397",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x0354abe67222f998ff15a9b7fa907dec68b499ab47836dae0829b2f9faa1feba",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "15",
+      "totalSupply": "39696335",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x03032b427fca59382bb775d06410d3f8dc5d7ee2ebd167da402085323a34a2e4",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "25",
+      "totalSupply": "36517210",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x03288b31926f42234af511c72d975c5a0bc57c643e2c4dacada42379995fb463",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "17",
+      "totalSupply": "30131264",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x0240087a266b9896f68d134fb665473822761c642fc54b703f9539a8372f6398",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "17",
+      "totalSupply": "38466826",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x006ccead2a04e33611fb2a9d98454a3e3fbd97973234b938e284398fdb0e8b4f",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "18",
+      "totalSupply": "26051586",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x052adeebe2e3318a0f21d9d875332baa07f4418c2cf3a1495319d226c821ea20",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "15",
+      "totalSupply": "28186080",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x01810e1295b2cb3f99e7efdc9c4da2b47d19ad0c26fa6a27154aa99cb53a95f2",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "21",
+      "totalSupply": "46709206",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x0401c2d5517e5a85026b7ac8d7e080f8dc6f6f8f407d65d9fb784f64c00158e5",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "18",
+      "totalSupply": "46348356",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x00eb385614be6f19782d1d0aedda451efba11756ae5701a1725827ceeec98260",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "23",
+      "totalSupply": "30821226",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x07e5810cbfa94467eb6cd7b3403678e61e6bf028bbcfb1ef3ef8eb5d0245b3e2",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "22",
+      "totalSupply": "48804716",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x07af0f02b173a44162715cade9809df736c99c8a1c5bdf49a3319c6ade22d6b9",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "23",
+      "totalSupply": "38941743",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x019e09a3b6c35997acfe00bc6747e634516192eae043320c6352ef23fdbc14c5",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "17",
+      "totalSupply": "9787483",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x0165ae6826687fab82a740fe1b1be71956d4ca69fb47c87487293758a9e64be9",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "26",
+      "totalSupply": "20292137",
+      "type": "erc1155"
+    },
+    {
+      "address": "0x03a516fb4d3b4fd335d35b1228fac938f56e3c9029bb3f3e67f0f5a1f65f7a4c",
+      "decimals": "",
+      "holders": "1",
+      "name": "",
+      "symbol": "",
+      "transfers": "19",
+      "totalSupply": "11663907",
+      "type": "erc1155"
+    }
+  ],
+  "lastPage": 8
+}

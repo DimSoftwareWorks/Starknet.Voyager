@@ -708,18 +708,27 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #region GetTokensAsync
 
-        [Fact]
-        public async Task GetTokensAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        [Theory]
+        [InlineData("ResponseExamples/Tokens-1.json", null, null, null, null)]
+        [InlineData("ResponseExamples/Tokens-2.json", TokenAttribute.Holders, TokenType.Erc20, 10, 1)]
+        [InlineData("ResponseExamples/Tokens-3.json", TokenAttribute.Holders, TokenType.Erc1155, null, null)]
+        public async Task GetTokensAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(string file, TokenAttribute? attribute, TokenType? type, int? ps, int? p)
         {
             // Arrange
 
-            var file = "ResponseExamples/Tokens.json";
+            var parameters = new GetTokensParameters
+            {
+                Attribute = attribute.GetValueOrDefault(),
+                Type = type.GetValueOrDefault(),
+                PageSize = ps,
+                Page = p
+            };
 
-            SetupWireMockServer($"/tokens", 200, await File.ReadAllTextAsync(file));
+            SetupWireMockServer($"/tokens", 200, await File.ReadAllTextAsync(file), DictionaryHelpers.GetQueryStringDictionary(parameters));
 
             // Act
 
-            var result = await voyagerExplorerHttpClient.GetTokensAsync();
+            var result = await voyagerExplorerHttpClient.GetTokensAsync(parameters);
 
             // Assert
 

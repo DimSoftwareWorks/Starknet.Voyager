@@ -1,0 +1,105 @@
+{
+  "items": [
+    {
+      "address": "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7",
+      "decimals": "18",
+      "holders": "4187905",
+      "name": "Ether",
+      "symbol": "ETH",
+      "transfers": "161263215",
+      "totalSupply": 47053.36688323478,
+      "type": "erc20"
+    },
+    {
+      "address": "0x053c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8",
+      "decimals": "6",
+      "holders": "1421795",
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "transfers": "33264452",
+      "totalSupply": 43559967.977191,
+      "type": "erc20"
+    },
+    {
+      "address": "0x068f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8",
+      "decimals": "6",
+      "holders": "652550",
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "transfers": "12597224",
+      "totalSupply": 7617118.730577,
+      "type": "erc20"
+    },
+    {
+      "address": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+      "decimals": "18",
+      "holders": "644944",
+      "name": "Starknet Token",
+      "symbol": "STRK",
+      "transfers": "3123326",
+      "totalSupply": 572734637.198308,
+      "type": "erc20"
+    },
+    {
+      "address": "0x00da114221cb83fa859dbdb4c44beeaa0bb37c7537ad5ae66fe5e0efd20e6eb3",
+      "decimals": "18",
+      "holders": "465297",
+      "name": "Dai Stablecoin",
+      "symbol": "DAI",
+      "transfers": "7372127",
+      "totalSupply": 1486893.8971959187,
+      "type": "erc20"
+    },
+    {
+      "address": "0x01b5bd713e72fdc5d63ffd83762f81297f6175a5e0a4771cdadbc1dd5fe72cb1",
+      "decimals": "18",
+      "holders": "407581",
+      "name": "zkLend Interest-Bearing ETH",
+      "symbol": "zETH",
+      "transfers": "4331535",
+      "totalSupply": 2946.19021065548,
+      "type": "erc20"
+    },
+    {
+      "address": "0x06a05844a03bb9e744479e3298f54705a35966ab04140d3d8dd797c1f6dc49d0",
+      "decimals": "0",
+      "holders": "216724",
+      "name": "Game of Life Token",
+      "symbol": "GOL",
+      "transfers": "718681",
+      "totalSupply": 311996,
+      "type": "erc20"
+    },
+    {
+      "address": "0x000023c72abdf49dffc85ae3ede714f2168ad384cc67d08524732acea90df325",
+      "decimals": "18",
+      "holders": "187008",
+      "name": "10kSwap Pair Token",
+      "symbol": "LPT",
+      "transfers": "1538164",
+      "totalSupply": 0.008173517187538285,
+      "type": "erc20"
+    },
+    {
+      "address": "0x04d0390b777b424e43839cd1e744799f3de6c176c7e32c1812a41dbd9c19db6a",
+      "decimals": "18",
+      "holders": "186662",
+      "name": "JediSwap Pair",
+      "symbol": "JEDI-P",
+      "transfers": "1187310",
+      "totalSupply": 0.013144050128468214,
+      "type": "erc20"
+    },
+    {
+      "address": "0x022b05f9396d2c48183f6deaf138a57522bcc8b35b67dee919f76403d1783136",
+      "decimals": "12",
+      "holders": "173230",
+      "name": "MYSWAP ETH/USDC",
+      "symbol": "MYLP",
+      "transfers": "891718",
+      "totalSupply": 5422.856265650599,
+      "type": "erc20"
+    }
+  ],
+  "lastPage": 6329
+}

@@ -12,7 +12,7 @@ namespace Starknet.Voyager.Explorer.Models
         
         public string Symbol { get; set; }
         
-        public int Decimals { get; set; }
+        public string Decimals { get; set; }
         
         public string Transfers { get; set; }
         

@@ -31,7 +31,7 @@ namespace Starknet.Voyager.Explorer.Models
 
         public string ContractAlias { get; set; }
         
-        public string ClassAlias { get; set; }
+        public ClassAliasDetails ClassAlias { get; set; }
         
         public string Selector { get; set; }
        

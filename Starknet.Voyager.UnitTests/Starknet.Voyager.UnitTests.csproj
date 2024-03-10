@@ -69,7 +69,16 @@
 	  <None Update="ResponseExamples\Contracts-1.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="ResponseExamples\Events.json">
+	  <None Update="ResponseExamples\Events-4.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ResponseExamples\Events-3.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ResponseExamples\Events-2.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ResponseExamples\Events-1.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="ResponseExamples\MissingAuthToken.json">

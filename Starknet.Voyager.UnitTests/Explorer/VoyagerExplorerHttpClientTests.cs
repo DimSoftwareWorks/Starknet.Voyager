@@ -623,18 +623,35 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #region GetEventsAsync
 
-        [Fact]
-        public async Task GetEventsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        [Theory]
+        [InlineData("ResponseExamples/Events-1.json", null, null, null, null, null)]
+        [InlineData("ResponseExamples/Events-2.json", 10, 1, null, "0x538e554ebdd09c1f43acef2b74f51569b212a448b74a2768fd3726a224eeaeb", null)]
+        [InlineData("ResponseExamples/Events-3.json", 10, 1, "0x0043D82b00bCfAB031cE67Cc5091EE42012892DB1bB1B7cE5947b8a490853d5B", null, null)]
+        [InlineData("ResponseExamples/Events-4.json", 5, 1, null, "0x538e554ebdd09c1f43acef2b74f51569b212a448b74a2768fd3726a224eeaeb", "0x5ed1d1d7eba8b1124b3e5b9e6df8ca354a3e16aafc2c9c63a563e662c1c4799")]
+        public async Task GetEventsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(
+            string file,
+            int? ps,
+            int? p,
+            string? contract,
+            string? txnHash,
+            string? blockHash)
         {
             // Arrange
 
-            var file = "ResponseExamples/Events.json";
+            var parameters = new GetEventsParameters
+            {
+                PageSize = ps,
+                Page = p,
+                Contract = contract,
+                TxnHash = txnHash,
+                BlockHash = blockHash
+            };
 
-            SetupWireMockServer($"/events", 200, await File.ReadAllTextAsync(file));
+            SetupWireMockServer($"/events", 200, await File.ReadAllTextAsync(file), DictionaryHelpers.GetQueryStringDictionary(parameters));
 
             // Act
 
-            var result = await voyagerExplorerHttpClient.GetEventsAsync();
+            var result = await voyagerExplorerHttpClient.GetEventsAsync(parameters);
 
             // Assert
 

@@ -22,4 +22,11 @@ Then click **Data**, then **Voyager API** from the menu, then you should fill th
 
 <hr />
 
-Register <code>IVoyagerExplorerHttpClient</code> as HttpClient and set Voyager Explorer base url: https://docs.voyager.online/#servers
+Register as HttpClient and set Voyager Explorer base url: https://docs.voyager.online/#servers
+
+```
+services.AddHttpClient<IVoyagerExplorerHttpClient, VoyagerExplorerHttpClient>(client =>
+{
+    client.BaseAddress = new Uri("[VOYAGER_API_URL]");
+});
+```

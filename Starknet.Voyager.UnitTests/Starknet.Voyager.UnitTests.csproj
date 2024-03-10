@@ -60,7 +60,13 @@
 	  <None Update="ResponseExamples\ContractDetails.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="ResponseExamples\Contracts.json">
+	  <None Update="ResponseExamples\Contracts-3.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ResponseExamples\Contracts-2.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="ResponseExamples\Contracts-1.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="ResponseExamples\Events.json">

@@ -547,18 +547,26 @@ namespace Starknet.Voyager.UnitTests.Explorer
 
         #region GetContractsAsync
 
-        [Fact]
-        public async Task GetContractsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid()
+        [Theory]
+        [InlineData("ResponseExamples/Contracts-1.json", null, null, null)]
+        [InlineData("ResponseExamples/Contracts-2.json", 10, 1, true)]
+        [InlineData("ResponseExamples/Contracts-3.json", 5, 1, false)]
+        public async Task GetContractsAsync_ShouldReturnResponseWithStatusOk_WhenResponseIsValid(string file, int? ps, int? p, bool? account)
         {
             // Arrange
 
-            var file = "ResponseExamples/Contracts.json";
+            var parameters = new GetContractsParameters
+            {
+                PageSize = ps,
+                Page = p,
+                Account = account
+            };
 
-            SetupWireMockServer($"/contracts", 200, await File.ReadAllTextAsync(file));
+            SetupWireMockServer($"/contracts", 200, await File.ReadAllTextAsync(file), DictionaryHelpers.GetQueryStringDictionary(parameters));
 
             // Act
 
-            var result = await voyagerExplorerHttpClient.GetContractsAsync();
+            var result = await voyagerExplorerHttpClient.GetContractsAsync(parameters);
 
             // Assert
 

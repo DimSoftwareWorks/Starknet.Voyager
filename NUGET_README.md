@@ -1,0 +1,24 @@
+**Starknet Voyager Explorer Http Client**
+
+Based on Voyager API 0.1.0
+
+This is a .NET Http Client wrapper for the Starknet Voyager Explorer: https://voyager.online/
+
+Voyager Explorer Docs: https://docs.voyager.online/
+
+To use Voyager Explorer client an API key is needed.
+
+You can request API key by going on their website: https://voyager.online/
+
+Then click **Data**, then **Voyager API** from the menu, then you should fill the form that is required. (this is valid till last update)
+
+**Client Usage**
+
+Register as HttpClient and set Voyager Explorer base url: https://docs.voyager.online/#servers
+
+```
+services.AddHttpClient<IVoyagerExplorerHttpClient, VoyagerExplorerHttpClient>(client =>
+{
+    client.BaseAddress = new Uri("[VOYAGER_API_URL]");
+});
+```

@@ -37,4 +37,4 @@ jobs:
       - name: Create the package
         run: dotnet pack -p:Version=${{ env.semVer }} --configuration Release Starknet.Voyager/Starknet.Voyager.csproj
       - name: Publish the package to nuget.org
-        run: dotnet nuget push Starknet.Voyager/bin/Release/*.nupkg --apiKey ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push Starknet.Voyager/bin/Release/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json

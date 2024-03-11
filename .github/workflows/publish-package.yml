@@ -32,9 +32,6 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --verbosity normal
-      - uses: dotnet/nbgv@master
-        with:
-          setAllVars: true
       - name:  Publish package to nuget.org
         id: publish_nuget
         uses: alirezanet/publish-nuget@v3.1.0

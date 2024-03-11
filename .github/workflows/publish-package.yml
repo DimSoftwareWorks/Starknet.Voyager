@@ -32,10 +32,9 @@ jobs:
         run: dotnet build --no-restore
       - name: Test
         run: dotnet test --no-build --verbosity normal
-      - name:  Publish package to nuget.org
-        id: publish_nuget
-        uses: alirezanet/publish-nuget@v3.1.0
-        with:
-          PROJECT_FILE_PATH: Starknet.Voyager/Starknet.Voyager.csproj
-          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
-          VERSION_STATIC: ${{ env.semVer }}
+      - name: Release Build
+        run: dotnet build --configuration Release Starknet.Voyager/Starknet.Voyager.csproj
+      - name: Create the package
+        run: dotnet pack -p:Version=${{ env.semVer }} --configuration Release Starknet.Voyager/Starknet.Voyager.csproj
+      - name: Publish the package to nuget.org
+        run: dotnet nuget push Starknet.Voyager/bin/Release/*.nupkg --apiKey ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
